@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+   <meta charset="utf-8">
+   <title>Моя страница 3</title>
+   <link rel="stylesheet" href="style1.css" />
+  </head>
+
+  <body>
+   <header>
+    <div id="main-wrapper1">
+     <main>
+      <img src="logo.png" alt="Логотип NERV" width="67" height="64">
+      <h1> Как там с деньгами?</h1>
+     </main>
+    </div>
+   </header>
+   
+   <div id="content">
+      <div>
+        <nav>
+          <a href="#список" id="link1">Список</a>
+          <a href="#таблица" id="link2">Таблица</a>
+          <a href="#form" id="link3">Форма</a>
+        </nav>
+      </div>
+      <div id="b1">
+       <div class="link-list">
+        <ol id="список">
+          <li><a href="http://example.com" id="Пример1">Пример1</a></li>
+          <li><a href="https://example.com">Пример2</a></li>
+          <li><a href="ftp://example.com/file.txt">Без авторизации</a></li>
+          <li><a href="ftp://login:parol@example.com/file.txt">Авторизация</a></li>
+          <li><a href="https://www.championat.com/auto/news-4452823-mazepin-o-mike-shumahere-trudno-konkurirovat-s-superzvezdoj.html#:~:text=Мой">Ссылка на фрагмент другой страницы</a></li>
+          <li><a href="#Пример1">Фрагмент этой страницы</a></li>
+          <li><a href="http://example.com/main?id=35454&width=10">С 2 параметрами</a></li>
+          <li>
+            <ul>
+              <li><a href="https://www.kubsu.ru/" title="Официальный сайт Кубанского государственного университета">КубГУ</a></li>
+              <li><a href="https://www.kubsu.ru/ru/university" title="Об университете">Университет</a></li>
+              <li><a href="https://www.kubsu.ru/ru/education" title="О факультетах">Образование</a></li>
+            </ul>
+          </li>
+          <li><a title="Что?">Без href</a></li>
+          <li><a href="">href пустой</a></li>
+          <li><a href="https://example.com/" rel="nofollow">Запрещен переход</a></li>
+          <li><a href="https://example.com" rel="nofollow" content="noindex">Без индексации</a></li>
+          <li>
+            <p>
+              Макс Эмилиан Ферста́ппен (нидерл. Max Verstappen); родился 30 сентября 1997 года в Хасселте, Бельгия)
+              — потомственный нидерландский автогонщик. Пилот команды «Ред Булл Рейсинг» «
+              <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0-1">Формулы-1</a> »
+              <br />В 2017 году четыре раза поднимался на подиум, два раза становился победителем гонки,
+              сезон закончил на шестом месте. В 2018 году побывал на подиуме одиннадцать раз,
+              снова одержал две победы, по итогам стал четвёртым.
+            </p>
+          </li>
+          <li><p><a href="https://en.wikipedia.org/wiki/Red_Bull_Racing"><img src="image.jpg" alt="Команда Ред Булл" width="228" height="70"></a></p></li>
+          <li>
+            <img src="map.jpg" usemap="#figure" alt="fig">
+            <map name="figure">
+              <area shape="rect" coords="25,25,125,125" href="https://en.wikipedia.org/wiki/Square" alt="kvadr">
+              <area shape="circle" coords="200,75,50" href="https://en.wikipedia.org/wiki/Circle" alt="krug">
+            </map>
+          </li>
+          <li><a href="news.html">Относительная</a></li>
+          <li><a href="about/15">Относительная в каталоге about</a></li>
+          <li><a href="../about">В каталоге уровнем выше текущего</a></li>
+          <li><a href="../../about">В каталоге двумя уровнями выше</a></li>
+          <li><a href="/">Сокращенная на главную</a></li>
+          <li><a href="/news/12">Сокращенная на внутреннюю</a></li>
+        </ol>
+       </div>
+	  
+	  <div class="table">
+        <h2 id="таблица">Таблица</h2>
+        <table>
+          <tr>
+            <th>Значимые деятели коммунизма</th>
+            <th>Деятельность</th>
+            <th>Страна</th>
+          </tr>
+          <tr>
+            <td>Карл Маркс</td>
+            <td>Философ, социолог, экономист, писатель, поэт, политический журналист, лингвист, общественный деятель, историк</td>
+            <td>Королевство Пруссия</td>
+          </tr>
+          <tr>
+            <td colspan="2">Эрнесто Че Гевара</td>
+            <td>Республика Куба</td>
+          </tr>
+          <tr>
+            <td>Фридрих Энгельс</td>
+            <td>Политический деятель, философ, историк и предприниматель</td>
+            <td>Германия</td>
+          </tr>
+          <tr>
+            <td>Иосиф Виссарионович Сталин</td>
+            <td>Председатель Совета Министров СССР</td>
+            <td>СССР</td>
+          </tr>
+          <tr>
+            <td>Владимир Ильич Ленин</td>
+            <td>Председатель Совета народных комиссаров СССР, коммунист и революцианер</td>
+            <td>СССР</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="form">
+        <h1>Форма контракта</h1>
+        <form action="/"
+              method="POST">
+          <label>
+            Имя:<br />
+            <input name="field-name"
+                   value="Иван" />
+          </label><br />
+
+          <label>
+            Еmail:<br />
+            <input name="field-email"
+                   value="test@example.com"
+                   type="email" />
+          </label><br />
+
+          <label>
+            Дата рождения:<br />
+            <input name="field-birth"
+                   value="2000-01-01"
+                   type="date" />
+          </label><br />
+
+          Пол:<br />
+          <label>
+            <input type="radio" checked="checked"
+                   name="radio-group-1" value="Мужской" />
+            Мужской
+          </label>
+          <label>
+            <input type="radio"
+                   name="radio-group-1" value="Женский" />
+            Женский
+          </label>
+          <label>
+            <input type="radio"
+                   name="radio-group-1" value="Отсутствует" />
+            Отсутствует
+          </label><br />
+
+          Количество конечностей:<br />
+          <label>
+            <input type="radio"
+                   name="radio-group-2" value="0" />
+            0
+          </label>
+          <label>
+            <input type="radio"
+                   name="radio-group-2" value="1" />
+            1
+          </label>
+          <label>
+            <input type="radio"
+                   name="radio-group-2" value="2" />
+            2
+          </label>
+          <label>
+            <input type="radio"
+                   name="radio-group-2" value="3" />
+            3
+          </label>
+          <label>
+            <input type="radio" checked="checked"
+                   name="radio-group-2" value="4" />
+            4
+          </label><br />
+
+          <label>
+            Сверхспособности:
+            <br />
+            <select name="field-listbox"
+                    multiple="multiple">
+              <option value="Бессмертие">Бессмертие</option>
+              <option value="Левитация">Левитация</option>
+              <option value="Суперсила" selected="selected">Суперсила</option>
+              <option value="Телепатия">Телепатия</option>
+            </select>
+          </label><br />
+
+          <label>
+            Биография:<br />
+            <textarea name="field-bio">Напишите хоть что-то</textarea>
+          </label><br />
+
+          Чекбокс:<br />
+          <label>
+            <input type="checkbox" checked="checked"
+                   name="check-1" />
+            Я болею за Red Bull Racing
+          </label><br />
+
+          Если уверенны в своем ответе нажимайте:
+          <input type="submit" value="Отправить" />
+		  
+        </form>
+      </div>
+    </div>
+	
+    <footer>
+      (c) Сергей Брезицкий 2021
+    </footer>
+	  
+  </body>
+
+</html> 
