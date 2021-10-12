@@ -1,0 +1,57 @@
+@media screen and (orientation: portrait) and (min-width: 720px) {
+
+
+    .link-list {
+        order: 1;
+    }
+
+    .form {
+        order: 2;
+    }
+
+    .table {
+        order: 3;
+    }
+}
+
+header img{
+    float: left;
+}
+header{
+    background-color: rgba(0, 212, 18, 0.925);
+    vertical-align: middle;
+}
+div.table ,div.form, div.link-list{
+    background-color: rgba(124, 0, 212, 0.151);
+}
+nav{
+    background-color: rgba(212, 0, 212, 0.466);
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+}
+header div {
+    vertical-align: central;
+}
+table th{
+    background-color: rgba(255, 140, 140, 0.4);
+    font-size: large;
+}
+table tr:nth-child(2n) td{
+    background-color: rgba(200, 200, 200, 1.0);
+}
+table tr:nth-child(2n+1) td{
+    background-color: rgba(255, 255, 255, 1.0);
+}
+table ,th,td{
+    border: 5px groove rgb(1, 189, 1);
+    border-collapse: collapse;
+    text-align: center;
+}
+.calc {
+    background-color: rgba(208, 255, 0, 0.26);
+}
+footer{
+    background-color: rgb(124, 0, 212);
+    color: rgb(229, 255, 0);
+}
