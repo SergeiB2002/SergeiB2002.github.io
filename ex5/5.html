@@ -21,7 +21,7 @@
       let s = parseFloat(cena[0].value) * parseFloat(kol[0].value);
       let c = parseFloat(cena[0].value);
       let k = parseFloat(kol[0].value);
-      if(!isAN(c)){
+      if(!isAN(c) && c<0){
         alert("Укажите цену правильно");
         return false;
       }
