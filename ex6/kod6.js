@@ -1,11 +1,11 @@
 let param = {
-    "checkbox1": {
-    "prop-1": 1
-    },
     "Options": {
     "option1": 34800,
     "option2": 6000,
     "option3": 5
+    },
+    "checkbox1": {
+    "prop-1": 1
     },
     "prodType":
     [17900, 230000, 3000000]
@@ -37,17 +37,20 @@ window.addEventListener("DOMContentLoaded", function (event) {
           {
             if(document.getElementById("option1").checked)
             {
-                r.innerHTML=(param.prodType[1]+param.Options.option1)*p1[0].value;
+                r.innerHTML=(param.prodType[1]+
+                             param.Options.option1)*p1[0].value;
                 pr=param.Options.option1;
             }
             if(document.getElementById("option2").checked)
             {
-                r.innerHTML=(param.prodType[1]+param.Options.option2)*p1[0].value;
+                r.innerHTML=(param.prodType[1]+
+                             param.Options.option2)*p1[0].value;
                 pr=param.Options.option2;
             }
             if(document.getElementById("option3").checked)
             {
-                r.innerHTML=(param.prodType[1]+param.Options.option3)*p1[0].value;
+                r.innerHTML=(param.prodType[1]+
+                             param.Options.option3)*p1[0].value;
                 pr=param.Options.option3;
             }
         }
@@ -66,7 +69,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
           {
             if(document.getElementById("ch1").checked)
             {
-                r.innerHTML=(param.prodType[2]+param.checkbox1["prop-1"])*p1[0].value;
+                r.innerHTML=(param.prodType[2]+
+                             param.checkbox1["prop-1"])*p1[0].value;
                 pch=param.checkbox1["prop-1"];
             }
             else
