@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма обратной связи</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="content container pb-5">
+    <div class="row justify-content-md-center mt-5 pl-5">
+      <div class="col-8 mb-3">
+        <form class="Form" id="mainForm" action="https://formcarry.com/s/0tAvUSy9qZ1" method="POST" accept-charset="UTF-8">
+          <div class="form-group">
+            <label for="name_field">Имя</label>
+            <input name="name" type="text" class="name form-control" id="name_field"
+                   value="Иван" required>
+          </div>
+          <div class="form-group">
+            <label for="email_field">Email</label>
+            <input name="email" type="text" class="email form-control" id="email_field"
+                   placeholder="example@gmail.com" value="mymail@mail.ru" required>
+          </div>
+          <div class="form-group">
+            <label for="mes_field">Сообщение</label>
+            <textarea class="mes form-control" name="message" id="mes_field" placeholder="Введите сообщение" rows="3"></textarea>
+          </div>
+          <div>
+            <input type="checkbox" id="check_field" name="check" required>
+             <label for="check_field">Согласен с <a href="https://www.gazprom.ru/about/legal/policy-personal-data/">политикой обработки персональных данных</a></label>
+           </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+    $(".Form").submit(function(e){
+        e.preventDefault();
+        var href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize()
+        }).done(function() {
+          alert('Отправлено.');
+        }).fail(function() {
+          alert('Что-то пошло не так.');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
