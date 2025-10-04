@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; UTF-8">
+  <title>Реферат - Оптимизация аппаратурных затрат в логических схемах устройств управления - Иванов Иван Иванович </title>
+  <link rel="stylesheet" type="text/css" href="../css/master_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body lang="ru">
+  <!-- Кнопка для открытия/закрытия меню -->
+  <div id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Выдвижное меню -->
+  <nav id="side-menu">
+    <div id="menu-close">&times;</div>
+    <a class="menu-item" href="../index.html">Резюме</a>
+    <a class="menu-item" href="../bio/index.html">Биография</a>
+    <a class="menu-item active" href="index.html">Реферат</a>
+    <a class="menu-item" href="../library/index.html">Библиотека</a>
+    <a class="menu-item" href="../links/index.html">Ссылки</a>
+    <a class="menu-item" href="../links/report.html">Отчет о поиске</a> 
+    <a class="menu-item" href="../ind/index.html">Индивидуальный раздел</a>
+  </nav>
+
+  <!-- Оверлей для закрытия меню при клике вне его -->
+  <div id="overlay"></div>
+
+  <!-- Основной контент в полупрозрачном контейнере -->
+  <div id="content-container">
+	  <div id="topblock">
+		  <div id="langbox">
+			  <a href="indexe.htm"><img src="../images/en.png" alt="English" title="English" width="24" height="20" border=0></a> 
+		  </div>
+		  <div id="donntu">
+			  <a href="http://donntu.ru" target=_blank>ДонНТУ</a> &nbsp; <a href="http://masters.donntu.ru" target=_blank>Портал магистров</a>
+		  </div>
+	  </div>
+
+	  <div id="header">
+		  <div id="photomag">
+			  <a href="../ivanov_big.jpg"><img src="../photo.jpg"  width=180 height=240	title="Магистр ДонНТУ Иванов Иван Иванович" alt="Магистр ДонНТУ Иванов Иван Иванович" border=0></a>
+		  </div>
+		  <div id="headertext">
+			  <h1 class="hdr">Иванов Иван Иванович</h1>
+			  <h3 class="hdr">Факультет компьютерных наук и технологий</h3>
+			  <h3 class="hdr">Кафедра компьютерной инженерии</h3>
+			  <h3 class="hdr">Специальность <q>Компьютерные системы и сети</q></h3>
+			  <h2 class="hdr">Оптимизация аппаратурных затрат в логических схемах устройств управления</h2>
+			  <h3 class="hdr">Научный руководитель: д.т.н., проф. Петров Петр Петрович</h3>
+		  </div>
+	  </div>
+
+	  <div id="middleblock">
+		  <div id="maintext">
+			  
+			  <h2>Реферат по теме выпускной работы</h2>
+			  
+			  <h2>Содержание</h2>
+
+			  <ul class=content>
+				  <li class=ct1><a href="#p0">Введение</a>
+				  <li class=ct1><a href="#p1">1. Актуальность темы</a>
+				  <li class=ct1><a href="#p2">2. Цель и задачи исследования, планируемые результаты</a>
+				  
+				  <li class=ct1><a href="#p3">3. Обзор исследований и разработок</a>
+				  <li class=ct2><a href="#p31">3.1 Обзор международных источников</a>
+				  <li class=ct2><a href="#p32">3.2 Обзор национальных источников</a>
+				  <li class=ct2><a href="#p33">3.3 Обзор локальных источников</a>
+				  
+				  <li class=ct1><a href="#p4">4. Подход к унификации синтеза автоматов Мура в базисе FPGA</a>
+				  <li class=ct1><a href="#p5">Выводы</a>
+				  
+				  <li class=ct1><a href="#ref">Список источников</a>
+			  </ul>
+			  
+			  <a name=p0></a>
+			  <h2>Введение</h2>
+			  
+			  <p>
+			  Цифровые системы находят широкое применение и являются базовыми компонентами компьютерной техники, автоматики, робототехники,
+			  производства, транспорта. Создание сверхбольших интегральных схем (СБИС), построение систем-на-кристалле (SoC – System-on-Chip),
+			  развитие технологий программируемых пользователем вентильных матриц (FPGAs – Field-Programmable Gate Arrays) и сложных программируемых
+			  логических устройств (CPLDs – Complex Programmable Logic Devices) изменили базис реализации цифровых систем и выдвинули повышенные
+			  требования к процессу их разработки...
+			  </p>
+			  
+			  <a name=p1></a>
+			  <h2>1. Актуальность темы</h2>
+			  
+			  <p> Известен ряд методов аппаратурной оптимизации автомата Мура: минимизация количества состояний и их специфическое кодирование,
+			  использование особенностей целевого базиса и алгоритма функционирования, многоуровневая реализация логической схемы. Указанные
+			  методы обладают определенной эффективностью, но, для получения наиболее экономичной реализации автомата, должны применяться совместно.</p>
+			  
+			  <a name='p2'></a>
+			  <h2>2. Цель и задачи исследования, планируемые результаты</h2>
+			  
+			  <p> Целью исследования является разработка подхода к унификации синтеза автоматов Мура, направленного на уменьшение аппаратурных
+			  затрат в целевой FPGA-микросхеме.</p>
+			  
+			  <a name=p3></a>
+			  <h2>3. Обзор исследований и разработок</h2>
+			  
+			  <p> Поскольку автоматы Мура являются важной частью цифровых систем, то проблемы их синтеза, анализа, минимизации и реализации были
+			  широко исследованы как американскими, европейскими, японскими учеными, так и отечественными специалистами...</p>
+			  
+			  <a name=p31></a>
+			  <h3>3.1 Обзор международных источников</h3>
+			  
+			  <p> Концепция автомата Мура была сформулирована Э.&nbsp;Муром в его статье &laquo;Gedanken-experiments on sequential machines&raquo; [<a href="#ref1">1</a>]. Там же показана
+			  сфера применения моделей с конечным количеством состояний и рассматривается широкий класс проблем абстрактной теории автоматов...</p>
+			  
+			  <a name=p32></a>
+			  <h3>3.2 Обзор национальных источников</h3>
+			  
+			  <p>В Одесском национальном политехническом университете Е.Л.&nbsp;Полиным, К.В.&nbsp;Защелкиным, Ю.А.&nbsp;Ковалевым, Е.Н.&nbsp;Ивановой, А.А.&nbsp;Николенко
+			  активно разрабатываются параллельные модели языка граф-схем алгоритмов (ГСА), методы синтеза цифровых управляющих устройств...</p>
+			  
+			  <a name=p33></a>
+			  <h3>3.3 Обзор локальных источников</h3>
+			  
+			  <p>В Донецком национальном техническом университете (кафедра компьютерной инженерии) широко разрабатываются методы реализации логических
+			  схем конечных автоматов, микропрограммных устройств управления (МУУ) и композиционных микропрограммных устройств управления (КМУУ)
+			  в базисах SPLD (Simple Programmable Logic Device), CPLD, FPGA, ASIC (Application Specific Integrated Circuit).</p>
+			  
+			  <a name=p4></a>
+			  <h2>4. Подход к унификации синтеза автоматов Мура в базисе FPGA</h2>
+							
+			  <p>Первые микросхемы FPGA были разработаны фирмой Xilinx в 1984 году и приобрели большую популярность, благодаря возможности реализации
+			  сложных функций и относительно небольшой стоимости. Современные FPGA сочетают программируемость SPLD и CPLD, сохраняя основное
+			  преимущество ASIC – объем реализуемых функций [<a href="#ref27">27</a>].</p>
+			  
+			  <div class=img>
+				  <img src="images/unification_process.png" width=682 height=589 alt="Подход к унификации синтеза автоматов Мура">
+				  <p class=imgcaption>Рисунок 1 – Подход к унификации синтеза автоматов Мура</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/animation.gif" width=594 height=420 alt="Диаграмма состояний автомата Мура">
+				  <p class=imgcaption>
+				  Рисунок 2 – Диаграмма состояний автомата Мура<br>(анимация: 10 кадров, 5 циклов повторения, 160 килобайт)<br>
+				  (<i>x<sub>i</sub></i> – входные сигналы, <i>y<sub>i</sub></i> – биты кода состояния, <i>z<sub>i</sub></i> – выходные сигналы)
+				  </p>
+			  </div>
+			  
+			  <a name=p5></a>
+			  <h2>Выводы</h2>
+			  
+			  <p>Качественный синтез цифровых систем, и автоматов Мура в частности, является одним из направлений логического проектирования и
+			  представляет не только теоретико-исследовательский, но и практический интерес. Разработка оптимальных цифровых устройств открывает
+			  путь к более полному использованию возможностей базиса реализации, &laquo;уплотнению&raquo; проектов, уменьшению материальных затрат.</p>
+			  
+			  <a name=ref></a>
+			  <h2>Список источников</h2>
+			  <ol>
+				  <li><a name="ref1"></a>Moore E.F. Gedanken-experiments on sequential machines / E.F. Moore // Automata studies, Annals of mathematical studies. – 1956. – vol. 34. – pp. 129-153.
+				  <li><a name="ref2"></a>Гилл А. Введение в теорию конечных автоматов / А. Гилл. – М.: Наука, 1966. – 272 с.
+				  <li><a name="ref27"></a>Максфилд К. Проектирование на ПЛИС. Курс молодого бойца / К. Максфилд. – М.: Издательский дом &laquo;Додэка-XXI&raquo;, 2007. – 408 с.
+				  <li><a name="ref30"></a>Баранов С.И. Синтез микропрограммных автоматов (граф-схемы и автоматы) / С.И. Баранов. – Л.: Энергия, 1979. – 232 с.
+				  <li><a name="ref83"></a>Barkalov A.A. Synthesis of operational and control automata / A.A. Barkalov, L.A. Titarenko. – Donetsk: DonNTU, TechPark DonNTU UNITECH, 2009. – 256 pp.
+			  </ol>
+		  
+		  </div> <!-- maintext -->
+	  
+	  </div> <!-- middleblock -->
+
+	  <div id="menub">
+		  <a class="mitemb" href="../index.html">Резюме</a>
+		  <a class="mitemb" href="../diss/index.html">Реферат</a>
+		  <a class="mitemb" href="../library/index.html">Библиотека</a>
+		  <a class="mitemb" href="../links/index.html">Ссылки</a>
+		  <a class="mitemb" href="../links/report.html">Отчет о поиске</a> 
+		  <a class="mitemb" href="../ind/index.html">Индивидуальный раздел</a>
+	  </div>
+  </div> <!-- content-container -->
+
+  <script>
+    // JavaScript для управления выдвижным меню
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const sideMenu = document.getElementById('side-menu');
+      const menuClose = document.getElementById('menu-close');
+      const overlay = document.getElementById('overlay');
+      const body = document.body;
+      
+      function openMenu() {
+        body.classList.add('menu-active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeMenu() {
+        body.classList.remove('menu-active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      menuToggle.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+    });
+  </script>
+
+</body>
+</html>

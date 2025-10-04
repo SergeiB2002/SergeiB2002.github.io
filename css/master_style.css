@@ -158,12 +158,24 @@ a:visited {
   right: 15px;
   z-index: 1001;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+body.menu.active #menu-toggle {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#menu-toggle:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
 }
 
 #menu-toggle span {
@@ -177,30 +189,44 @@ a:visited {
 #side-menu {
   position: fixed;
   top: 0;
-  right: -300px;
-  width: 280px;
+  right: -320px;
+  width: 300px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   z-index: 1000;
-  transition: right 0.3s ease;
-  padding: 60px 20px 20px 20px;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  transition: right 0.4s ease;
+  padding: 70px 20px 20px 20px;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.7);
   overflow-y: auto;
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#side-menu.active {
+body.menu-active #side-menu {
   right: 0;
 }
 
 #menu-close {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 24px;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
   color: #fff;
   cursor: pointer;
   background: none;
   border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  z-index: 1002; /* Убедимся, что крестик поверх всего */
+}
+
+#menu-close:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-item {
@@ -234,9 +260,10 @@ a:visited {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
 }
 
-#overlay.active {
+body.menu-active #overlay {
   opacity: 1;
   visibility: visible;
 }
@@ -354,6 +381,56 @@ table#resume tr.odd:hover {
 
 table#resume tr.even:hover {
   background-color: rgba(79, 195, 247, 0.1);
+}
+
+/* ------------- СТИЛИ ДЛЯ СТРАНИЦЫ БИОГРАФИИ -------------------------------------------------------------- */
+
+.bio-section {
+  margin: 30px 0;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 5px solid #4fc3f7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bio-section:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bio-section h2 {
+  color: #4fc3f7;
+  margin: 0 0 20px 0;
+  padding: 0;
+  text-indent: 0;
+  font-size: 20px;
+  border-bottom: 2px solid rgba(79, 195, 247, 0.3);
+  padding-bottom: 10px;
+}
+
+.bio-section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.bio-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Адаптивность для биографии */
+@media (max-width: 768px) {
+  .bio-section {
+    margin: 20px 0;
+    padding: 20px 15px;
+  }
+  
+  .bio-section h2 {
+    font-size: 18px;
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------------------- */

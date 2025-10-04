@@ -20,20 +20,23 @@
   <nav id="side-menu">
     <div id="menu-close">&times;</div>
     <a class="menu-item active" href="index.html">Резюме</a>
-    <a class="menu-item" href="bio/index.htm">Биография</a>
-    <a class="menu-item" href="diss/index.htm">Реферат</a>
-    <a class="menu-item" href="library/index.htm">Библиотека</a>
-    <a class="menu-item" href="links/index.htm">Ссылки</a>
-    <a class="menu-item" href="links/report.htm">Отчет о поиске</a> 
-    <a class="menu-item" href="ind/index.htm">Индивидуальный раздел</a>
+    <a class="menu-item" href="bio/index.html">Биография</a>
+    <a class="menu-item" href="diss/index.html">Реферат</a>
+    <a class="menu-item" href="library/index.html">Библиотека</a>
+    <a class="menu-item" href="links/index.html">Ссылки</a>
+    <a class="menu-item" href="links/report.html">Отчет о поиске</a> 
+    <a class="menu-item" href="ind/index.html">Индивидуальный раздел</a>
   </nav>
 
   <!-- Оверлей для закрытия меню при клике вне его -->
   <div id="overlay"></div>
 
-	<div id="topblock">
+  <!-- Основной контент в полупрозрачном контейнере -->
+  <div id="content-container">
+
+    <div id="topblock">
 		<div id="langbox">
-			<a href="indexe.htm"><img src="images/en.png" alt="English" title="English" width="24" height="20"></a> 
+			<a href="indexe.html"><img src="images/en.png" alt="English" title="English" width="24" height="20"></a> 
 		</div>
 		<div id="donntu">
 			<a href="http://donntu.ru" target="_blank">ДонНТУ</a> &nbsp;
@@ -41,8 +44,6 @@
 		</div>
 	</div> <!-- topblock --> 
 
-  <!-- Основной контент в полупрозрачном контейнере -->
-  <div id="content-container">
 	  <div id="header">
 		  <div id="photomag">
 			  <a href="ivanov_big.jpg">
@@ -113,40 +114,38 @@
 	  </div> <!-- middleblock -->
 
 	  <div id="menub">
-		  <a class="mitemb" href="bio/index.htm">Биография</a>
-		  <a class="mitemb" href="diss/index.htm">Реферат</a>
-		  <a class="mitemb" href="library/index.htm">Библиотека</a>
-		  <a class="mitemb" href="links/index.htm">Ссылки</a>
-		  <a class="mitemb" href="links/report.htm">Отчет о поиске</a> 
-		  <a class="mitemb" href="ind/index.htm">Индивидуальный раздел</a>
+		  <a class="mitemb" href="bio/index.html">Биография</a>
+		  <a class="mitemb" href="diss/index.html">Реферат</a>
+		  <a class="mitemb" href="library/index.html">Библиотека</a>
+		  <a class="mitemb" href="links/index.html">Ссылки</a>
+		  <a class="mitemb" href="links/report.html">Отчет о поиске</a> 
+		  <a class="mitemb" href="ind/index.html">Индивидуальный раздел</a>
 	  </div>
   </div> <!-- content-container -->
 
   <script>
-    // JavaScript для управления выдвижным меню
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.getElementById('menu-toggle');
-      const sideMenu = document.getElementById('side-menu');
-      const menuClose = document.getElementById('menu-close');
-      const overlay = document.getElementById('overlay');
-      
-      function openMenu() {
-        sideMenu.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-      
-      function closeMenu() {
-        sideMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-      
-      menuToggle.addEventListener('click', openMenu);
-      menuClose.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
-    });
-  </script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+    const menuClose = document.getElementById('menu-close');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+    
+    function openMenu() {
+      body.classList.add('menu-active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      body.classList.remove('menu-active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+  });
+</script>
 
 </body>
 </html>
