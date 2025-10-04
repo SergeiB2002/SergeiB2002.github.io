@@ -1,0 +1,536 @@
+/* БАЗОВЫЙ СТИЛЬ */
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap";
+
+/* ------------- ОСНОВНЫЕ ТЕГИ ------------------------------------------------------------------------------ */
+
+body {
+  background: #1a1a1a url('../images/Kivotos_1.webp') fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Основной контейнер с полупрозрачным фоном */
+#content-container {
+  background: rgba(0, 0, 0, 0.7);
+  margin: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Разные кавычки для разных языков (тег <q>) */
+body:lang(en) q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+body:lang(uk) q, body:lang(de) q { quotes: "\201E" "\201C"; }
+body:lang(ru) q, body:lang(fr) q { quotes: "\00AB" "\00BB" "\201E" "\201C"; }
+
+h1 {
+  font: bold 24px 'Roboto', sans-serif;
+  line-height: 120%;
+  text-align: center;
+  padding: 0;
+  color: #4fc3f7;
+  margin-top: 0;
+}
+
+h2 {
+  font: bold 18px 'Roboto', sans-serif;
+  text-align: left;
+  text-indent: 25px;
+  margin: 20px 10px 10px 10px;
+  color: #4fc3f7;
+}
+
+h3 {
+  font: bold 16px 'Roboto', sans-serif;
+  text-align: left;
+  text-indent: 10px;
+  margin: 20px 10px 0 10px;
+  color: #4fc3f7;
+}
+
+h2.cntr {
+  text-align: center;
+  text-indent: 0;
+}
+
+#header h1 {
+  text-align: left;
+  font: bold 22px 'Roboto', sans-serif;
+  line-height: 90%;
+  padding: 4px 0 0 0;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#header h2 {
+  font: bold 18px 'Roboto', sans-serif;
+  line-height: 90%;
+  color: #bbdefb;
+  text-indent: 0;
+  margin: 0;
+  padding: 5px 0 10px 0;
+}
+
+#header h3 {
+  font: 16px 'Roboto', sans-serif;
+  line-height: 100%;
+  color: #bbdefb;
+  text-indent: 0;
+  margin: 0;
+  padding: 5px 0 10px 0;
+}
+
+p {
+  text-indent: 20px;
+  font: 15px/140% 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 2px 15px 3px 15px;
+  text-align: justify;
+  color: #e0e0e0;
+}
+
+img {
+  border: 0;
+}
+
+ol {
+  text-indent: 0;
+  margin: 10px 0 0 0;
+}
+
+ol h2 {
+  text-indent: 0;
+  margin: 30px 10px 10px 0;
+}
+
+p + ol { margin-top: 0; }
+
+ul {
+  text-indent: 0;
+  margin: 0;
+}
+
+ul.content {
+  margin-left: 5px;
+  list-style-type: none;
+}
+
+li {
+  margin-left: 25px;
+  font: 15px 'Open Sans', sans-serif;
+  padding: 0 5px 5px 0;
+  color: #e0e0e0;
+}
+
+li.ct1 {
+  margin-left: 0;
+  padding: 2px;
+}
+
+li.ct2 {
+  margin-left: 20px;
+  padding: 2px;
+}
+
+a {
+  font: 14px 'Roboto', sans-serif;
+  color: #4fc3f7;
+}
+
+a:hover {
+  color: #29b6f6;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ba68c8;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- ВЫДВИЖНОЕ МЕНЮ ---------------------------------------------------------------------------- */
+
+#menu-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: 60px 20px 20px 20px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+#side-menu.active {
+  right: 0;
+}
+
+#menu-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-item {
+  display: block;
+  padding: 12px 15px;
+  margin: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu-item:hover {
+  background: rgba(79, 195, 247, 0.3);
+}
+
+.menu-item.active {
+  background: rgba(79, 195, 247, 0.5);
+  font-weight: bold;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- ОСНОВНЫЕ БЛОКИ ----------------------------------------------------------------------------- */
+
+#topblock {
+  min-height: 36px;
+  border-bottom: solid 1px #546e7a;
+  position: relative;
+  z-index: 10;
+}
+
+#langbox {
+  float: left;
+  padding: 5px 0 0 5px;
+}
+
+#donntu {
+  float: right;
+  padding: 5px 5px 0 0;
+  margin: 0 3px 0 3px;
+}
+
+#donntu a {
+  font: 12px 'Roboto', sans-serif;
+  margin-left: 3px;
+}
+
+#donntu a:visited {
+  color: #4fc3f7;
+}
+
+#photomag {
+  float: left;
+  width: 180px;
+  padding: 10px 20px 10px 10px;
+}
+
+#header {
+  min-height: 270px;
+  clear: both;
+}
+
+#headertext {
+  padding: 10px;
+}
+
+.img {
+  margin: 15px 0 30px 0;
+  text-align: center;
+}
+
+.imgcaption {
+  font: italic 15px/120% 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 2px 15px 3px 15px;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.comment {
+  background: rgba(33, 150, 243, 0.3);
+  color: white;
+  font-size: 12px;
+  margin: 0 20px 0 20px;
+  padding: 10px;
+  text-indent: 0;
+}
+
+.cntr { text-align: center; }
+.bld {font-weight: bold;}
+.itl {font-style: italic;}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- ТАБЛИЦА РЕЗЮМЕ ----------------------------------------------------------------------------- */
+
+table#resume {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+table#resume tr td {
+  border: 0 solid black;
+  padding: 8px;
+  color: #e0e0e0;
+}
+
+table#resume td.c1 {
+  width: 25%;
+  text-align: right;
+  padding-right: 10px;
+  color: #bbdefb;
+  font-weight: 500;
+}
+
+table#resume td.c2 {
+  width: 75%;
+}
+
+table#resume tr.odd {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+table#resume tr.even {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+table#resume tr.odd:hover {
+  background-color: rgba(79, 195, 247, 0.2);
+}
+
+table#resume tr.even:hover {
+  background-color: rgba(79, 195, 247, 0.1);
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- ПУНКТ СПИСКА БИБЛИОТЕКИ -------------------------------------------------------------------- */
+
+.lib {
+  margin: 10px 0 20px 25px;
+}
+
+.lib p {
+  text-indent: 0;
+  margin: 4px 0 0 0;
+}
+
+.lib .cat {
+  color: #bbdefb;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- ПУНКТ СПИСКА СССЫЛОК  ---------------------------------------------------------------------- */
+
+.list {
+  margin: 5px 0 12px 25px;
+}
+
+.list p {
+  text-indent: 0;
+  margin: 4px 0 0 0;
+}
+
+.list .cat {
+  color: #81c784;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- ТАБЛИЦА ОТЧЕТА О ПОИСКЕ  ------------------------------------------------------------------- */
+
+table.search {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  border-collapse: collapse;
+  padding: 0;
+  text-align: center;
+}
+
+table.search tr td {
+  border: 1px solid #555;
+  padding: 5px;
+  color: #e0e0e0;
+}
+
+table.search td.c1 {
+  width: 52%;
+  text-align: left;
+  padding-left: 10px;
+  color: #bbdefb;
+  font-size: 15px;
+}
+
+table.search td.cn {
+  width: 12%;
+  text-align: center;
+}
+
+table.search td.cspan {
+  padding: 15px 5px 5px 0;
+}
+
+table.search tr.odd {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+table.search tr.even {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+table.search tr.odd:hover {
+  background-color: rgba(79, 195, 247, 0.1);
+}
+
+table.search tr.even:hover {
+  background-color: rgba(79, 195, 247, 0.2);
+}
+
+table.search td.cspan p {
+  color: #fff;
+  font: bold 13px 'Roboto', sans-serif;
+  text-indent: 10px;
+  margin: 0;
+}
+
+table.search td.cn a {
+  font-size: 13px;
+  font-weight: bold;
+  color: #4fc3f7;
+}
+
+table.search td.cn a:visited {
+  color: #4fc3f7;
+}
+
+table.search td.cn a:hover {
+  color: #29b6f6;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- КНОПКИ НИЖНЕГО МЕНЮ ------------------------------------------------------------------------ */
+
+#menub {
+  clear: both;
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(33, 33, 33, 0.7);
+  border-top: solid 1px #546e7a;
+  border-bottom: solid 1px #546e7a;
+  margin-top: 20px;
+}
+
+.mitemb {
+  font-size: 13px;
+  margin-right: 12px;
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.mitemb:hover {
+  color: #29b6f6;
+  text-decoration: underline;
+}
+
+#sb {
+  clear: both;
+  text-align: center;
+  padding: 18px 0 0 0;
+  background: transparent;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* ------------- АДАПТИВНОСТЬ ------------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #content-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  #header {
+    text-align: center;
+  }
+  
+  #photomag {
+    float: none;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+  
+  #headertext {
+    text-align: center;
+  }
+  
+  #header h1, #header h2, #header h3 {
+    text-align: center;
+  }
+  
+  table#resume {
+    width: 100%;
+  }
+  
+  table#resume td.c1 {
+    width: 30%;
+  }
+  
+  table#resume td.c2 {
+    width: 70%;
+  }
+}
