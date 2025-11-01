@@ -1,0 +1,711 @@
+/* Стили для страниц теории */
+
+/* Навигационная панель */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #764ba2;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    margin: 0 10px;
+    color: #a0aec0;
+}
+
+.breadcrumb-current {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Заголовок теории */
+.theory-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.theory-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.theory-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Основной контент */
+.theory-content {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.content-section {
+    margin-bottom: 50px;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-heading {
+    color: #2d3748;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.text-content h3 {
+    color: #4a5568;
+    font-size: 1.3rem;
+    margin: 25px 0 15px 0;
+}
+
+.text-content h4 {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin: 20px 0 10px 0;
+}
+
+.text-content p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* Списки */
+.content-list {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.content-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Блоки с информацией и предупреждениями */
+.info-box, .warning-box {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid;
+}
+
+.info-box {
+    background: #ebf8ff;
+    border-left-color: #4299e1;
+    color: #2b6cb0;
+}
+
+.warning-box {
+    background: #fffaf0;
+    border-left-color: #ed8936;
+    color: #c05621;
+}
+
+/* Изображения */
+.image-container {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.theory-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+    font-style: italic;
+    color: #718096;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Блоки с кодом */
+.code-example {
+    margin: 25px 0;
+    background: #1a202c;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.code-example h4 {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 12px 20px;
+    margin: 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #4a5568;
+}
+
+.code-example pre {
+    margin: 0;
+    padding: 0;
+}
+
+.code-example code {
+    display: block;
+    padding: 20px;
+    font-family: 'Courier New', Monaco, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+    overflow-x: auto;
+}
+
+/* Подсветка синтаксиса (базовая) */
+.language-go .keyword { color: #ff79c6; }
+.language-go .string { color: #f1fa8c; }
+.language-go .comment { color: #6272a4; font-style: italic; }
+.language-go .function { color: #50fa7b; }
+.language-go .type { color: #8be9fd; }
+.language-go .number { color: #bd93f9; }
+
+/* Блоки заключения */
+.summary-box {
+    background: #f0fff4;
+    border: 1px solid #9ae6b4;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.summary-box h4 {
+    color: #2f855a;
+    margin-top: 0;
+}
+
+.summary-box ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+}
+
+.next-steps {
+    background: #faf5ff;
+    border: 1px solid #d6bcfa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.next-steps h4 {
+    color: #6b46c1;
+    margin-top: 0;
+}
+
+.next-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.next-link:hover {
+    text-decoration: underline;
+}
+
+/* Навигация между темами */
+.theory-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.nav-button {
+    padding: 12px 25px;
+    background: white;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: #667eea;
+}
+
+.nav-button.home {
+    background: #667eea;
+    color: white;
+}
+
+.nav-button.home:hover {
+    background: #764ba2;
+}
+
+/* Футер */
+.theory-footer {
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    padding: 20px 0;
+}
+
+/* Адаптивность для страниц теории */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .theory-content {
+        padding: 20px;
+    }
+    
+    .theory-title {
+        font-size: 1.8rem;
+    }
+    
+    .theory-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .code-example code {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .theory-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-heading {
+        font-size: 1.4rem;
+    }
+    
+    .breadcrumbs {
+        font-size: 0.8rem;
+    }
+}
+
+/* Стили для страницы вопросов и заданий */
+
+/* Контейнер вопросов */
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Элемент вопроса */
+.question-item {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 0;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.question-header {
+    background: #edf2f7;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.question-number {
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.question-text {
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.question-answer {
+    padding: 20px;
+    background: white;
+}
+
+.question-answer strong {
+    color: #2d3748;
+}
+
+/* Таблица сравнения */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.comparison-table th {
+    background: #667eea;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f7fafc;
+}
+
+/* Контейнер упражнений */
+.exercises-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Элемент упражнения */
+.exercise-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.exercise-item:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.exercise-number {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+.exercise-difficulty {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.exercise-difficulty.easy {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.exercise-difficulty.intermediate {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.exercise-difficulty.hard {
+    background: #e9d8fd;
+    color: #44337a;
+}
+
+.exercise-title {
+    color: #2d3748;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.exercise-description {
+    margin-bottom: 15px;
+}
+
+.exercise-requirements {
+    background: #ebf8ff;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #4299e1;
+    font-size: 0.9rem;
+}
+
+/* Контейнер решения */
+.solution-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.solution-description {
+    background: #f0fff4;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #48bb78;
+}
+
+.solution-explanation {
+    background: #faf5ff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #d6bcfa;
+}
+
+.solution-explanation h4 {
+    color: #6b46c1;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Адаптивность для страницы вопросов */
+@media (max-width: 768px) {
+    .question-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .exercise-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .exercise-item {
+        padding: 15px;
+    }
+    
+    .question-header {
+        padding: 15px;
+    }
+    
+    .question-answer {
+        padding: 15px;
+    }
+}
+
+/* Блок рекомендации */
+.recommendation-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.recommendation-box h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+}
+
+.recommendation-box ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.recommendation-box a {
+    color: #f1fa8c;
+    text-decoration: none;
+}
+
+.recommendation-box a:hover {
+    text-decoration: underline;
+}
+
+/* Внешние ссылки */
+.external-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+    color: #764ba2;
+}
+
+/* Методы выполнения */
+.execution-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.method-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+}
+
+.method-card h4 {
+    color: #2d3748;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+}
+
+.method-card pre {
+    background: #1a202c;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.method-explanation {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    border-left: 4px solid #48bb78;
+}
+
+.method-explanation p {
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.method-explanation ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.output-example {
+    background: #edf2f7;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.output-example strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+/* Улучшенное объяснение кода */
+.code-explanation .explanation-text p.note {
+    background: #fffaf0;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid #ed8936;
+    margin: 8px 0 0 0;
+    font-style: italic;
+}

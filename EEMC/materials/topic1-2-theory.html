@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 1.2 - Первая программа | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационная панель -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">← На главную</a>
+                <div class="nav-links">
+                    <a href="#editor" class="nav-link">Редактор</a>
+                    <a href="#creation" class="nav-link">Создание</a>
+                    <a href="#compilation" class="nav-link">Компиляция</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#">Раздел 1</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Тема 1.2: Первая программа</span>
+        </div>
+
+        <!-- Заголовок темы -->
+        <header class="theory-header">
+            <h1 class="theory-title">Тема 1.2: Первая программа</h1>
+            <p class="theory-subtitle">Создание, компиляция и выполнение первой программы на Go</p>
+        </header>
+
+        <main class="theory-content">
+            <!-- Секция 1: Выбор редактора -->
+            <section id="editor" class="content-section">
+                <h2 class="section-heading">Выбор текстового редактора</h2>
+                
+                <div class="text-content">
+                    <p>Для написания кода на Go потребуется текстовый редактор. Можно использовать любой редактор, например, встроенный блокнот или любой другой.</p>
+
+                    <div class="recommendation-box">
+                        <h4>👑 Рекомендуемый редактор: Visual Studio Code</h4>
+                        <p><strong>Visual Studio Code</strong> - это продвинутый кроссплатформенный легковесный текстовый редактор, который поддерживает:</p>
+                        <ul class="content-list">
+                            <li>Подсветку синтаксиса</li>
+                            <li>Интеллектуальную подсказку для разных языков программирования</li>
+                            <li>Множество дополнительных возможностей</li>
+                        </ul>
+                        <p>Инсталлятор для нужной операционной системы (есть поддержка для Windows, Mac OS, Linux) можно найти по адресу: 
+                            <a href="https://code.visualstudio.com/" target="_blank" class="external-link">https://code.visualstudio.com/</a>
+                        </p>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>💡 Расширение для Go:</strong> Для Visual Studio Code можно установить специальное расширение для поддержки языка Go от компании Google. Для этого:
+                        <ol class="content-list">
+                            <li>Перейдите в Visual Studio Code на вкладку расширений (View → Extensions)</li>
+                            <li>В строку поиска введите "Go"</li>
+                            <li>Установите первое расширение в списке (от компании Google с наибольшим количеством установок)</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 2: Создание программы -->
+            <section id="creation" class="content-section">
+                <h2 class="section-heading">Создание первой программы</h2>
+                
+                <div class="text-content">
+                    <h3>Шаг 1: Создание папки и файла</h3>
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-content">
+                                <h4>1. Создайте папку для проекта</h4>
+                                <p>Создайте на жестком диске папку для хранения файлов с исходным кодом. Например: <code>C:\golang</code></p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-content">
+                                <h4>2. Создайте файл программы</h4>
+                                <p>В созданной папке создайте новый текстовый файл и переименуйте его в <code>hello.go</code></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Шаг 2: Написание кода</h3>
+                    <p>Откройте файл <code>hello.go</code> в текстовом редакторе и добавьте следующий код:</p>
+
+                    <div class="code-example">
+                        <h4>hello.go - первая программа на Go</h4>
+                        <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello METANIT.COM!")
+}</code></pre>
+                    </div>
+
+                    <h3>Разбор программы</h3>
+
+                    <div class="code-explanation">
+                        <div class="explanation-item">
+                            <div class="code-example">
+                            <pre><code class="language-go">package main</code></pre>
+                            </div>
+                            <div class="explanation-text">
+                                <p><strong>Объявление пакета</strong></p>
+                                <p>Программа на языке Go определяется в виде пакетов. Программный код должен быть определен в каком-то определенном пакете.</p>
+                                <p class="note">Пакет должен называться именно <code>main</code>, так как именно этот пакет определяет исполняемый файл.</p>
+                            </div>
+                        </div>
+
+                        <div class="explanation-item">
+                            <div class="code-example">
+                            <pre><code class="language-go">import "fmt"</code></pre>
+                            </div>
+                            <div class="explanation-text">
+                                <p><strong>Импорт пакета</strong></p>
+                                <p>С помощью директивы <code>import</code> мы подключаем внешние пакеты. В Go есть множество встроенных пакетов, которые содержат код, выполняющий определенные действия.</p>
+                                <p>В данном случае мы подключаем пакет <code>fmt</code>, который содержит функцию <code>Println</code> для вывода на консоль.</p>
+                            </div>
+                        </div>
+
+                        <div class="explanation-item">
+                            <div class="code-example">
+                            <pre><code class="language-go">func main() {</code></pre>
+                            </div>
+                            <div class="explanation-text">
+                                <p><strong>Главная функция</strong></p>
+                                <p>Это главная функция любой программы на Go. Все, что выполняется в программе, выполняется именно в функции <code>main</code>.</p>
+                                <ul>
+                                    <li><code>func</code> - ключевое слово для объявления функции</li>
+                                    <li><code>main</code> - название функции</li>
+                                    <li><code>()</code> - параметры функции (пустые, так как функция не принимает параметров)</li>
+                                    <li><code>{</code> - начало тела функции</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="explanation-item">
+                            <div class="code-example">
+                            <pre><code class="language-go">fmt.Println("Hello METANIT.COM!")</code></pre>
+                            </div>
+                            <div class="explanation-text">
+                                <p><strong>Вывод на консоль</strong></p>
+                                <p>Функция <code>Println()</code> из пакета <code>fmt</code> выводит строку на консоль.</p>
+                                <p>Синтаксис вызова: <code>имя_пакета.имя_функции(параметры)</code></p>
+                            </div>
+                        </div>
+
+                        <div class="explanation-item">
+                            <div class="code-example">
+                            <pre><code class="language-go">}</code></pre>
+                            </div>
+                            <div class="explanation-text">
+                                <p><strong>Конец функции</strong></p>
+                                <p>Закрывающая фигурная скобка обозначает конец тела функции <code>main</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 3: Компиляция и выполнение -->
+            <section id="compilation" class="content-section">
+                <h2 class="section-heading">Компиляция и выполнение программы</h2>
+                
+                <div class="text-content">
+                    <h3>Шаг 1: Открытие командной строки</h3>
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-content">
+                                <h4>1. Откройте командную строку/терминал</h4>
+                                <p>Запустите командную строку (Windows) или терминал (Linux/Mac)</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-content">
+                                <h4>2. Перейдите в папку с программой</h4>
+                                <p>Используйте команду <code>cd</code> для перехода к папке с файлом <code>hello.go</code>:</p>
+                                <pre><code class="language-bash">cd C:\golang</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Шаг 2: Выполнение программы</h3>
+                    
+                    <div class="execution-methods">
+                        <div class="method-card">
+                            <h4>🚀 Быстрое выполнение (go run)</h4>
+                            <p>Выполните программу без создания отдельного исполняемого файла:</p>
+                            <pre><code class="language-bash">go run hello.go</code></pre>
+                            <div class="method-explanation">
+                                <p><strong>Что происходит:</strong></p>
+                                <ul>
+                                    <li><code>go</code> - компилятор Go</li>
+                                    <li><code>run</code> - команда для выполнения программы</li>
+                                    <li><code>hello.go</code> - файл с исходным кодом</li>
+                                </ul>
+                            </div>
+                            <div class="output-example">
+                                <strong>Результат:</strong>
+                                <pre><code class="language-bash">Hello METANIT.COM!</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <h4>🔨 Компиляция в EXE (go build)</h4>
+                            <p>Скомпилируйте программу в отдельный исполняемый файл:</p>
+                            <pre><code class="language-bash">go build hello.go</code></pre>
+                            <div class="method-explanation">
+                                <p><strong>Что происходит:</strong></p>
+                                <ul>
+                                    <li>Создается файл <code>hello.exe</code> (Windows) или <code>hello</code> (Linux/Mac)</li>
+                                    <li>Файл можно запускать независимо от компилятора Go</li>
+                                </ul>
+                            </div>
+                            <div class="output-example">
+                                <strong>Запуск исполняемого файла:</strong>
+                                <pre><code class="language-bash"># Windows
+hello.exe
+
+# Linux/Mac
+./hello</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Важно:</strong> При установке Go путь к компилятору автоматически прописывается в переменные окружения, поэтому можно использовать команду <code>go</code> без указания полного пути.
+                    </div>
+
+                    <div class="info-box">
+                        <strong>📌 Пример выполнения в командной строке:</strong>
+                        <pre><code class="language-bash">C:\golang>go run hello.go
+Hello METANIT.COM!
+C:\golang>go build hello.go
+C:\golang>hello.exe
+Hello METANIT.COM!
+C:\golang></code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Панель навигации между темами -->
+        <div class="theory-navigation">
+            <a href="topic1-1-theory.html" class="nav-button prev">← Предыдущая тема</a>
+            <a href="../index.html" class="nav-button home">На главную</a>
+            <a href="topic1-3-theory.html" class="nav-button next">Следующая тема →</a>
+        </div>
+
+        <footer class="theory-footer">
+            <p>&copy; 2025 ЭУМК "Программирование на Go". Материал подготовлен на основе открытых источников.</p>
+        </footer>
+    </div>
+
+    <script src="../js/code-highlight.js"></script>
+</body>
+</html>

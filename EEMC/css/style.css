@@ -1,0 +1,235 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Шапка */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.header h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Основной контент */
+.main-content {
+    display: grid;
+    gap: 30px;
+}
+
+/* Блоки разделов */
+.section-block {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.section-title {
+    color: #4a5568;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    font-weight: 600;
+}
+
+/* Контейнер тем */
+.topics-container {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Ссылки-темы */
+.topic-link {
+    display: block;
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.topic-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.topic-link:hover::before {
+    left: 100%;
+}
+
+.topic-link:hover {
+    background: #edf2f7;
+    border-left-color: #764ba2;
+    transform: translateX(5px);
+}
+
+.topic-title {
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.topic-link:hover .topic-title {
+    color: #667eea;
+}
+
+.topic-description {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Кнопка вопросов и заданий */
+.section-questions {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.questions-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.questions-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+    background: linear-gradient(135deg, #ee7ef7, #e74c3c);
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-block {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.section-block:nth-child(1) { animation-delay: 0.1s; }
+.section-block:nth-child(2) { animation-delay: 0.2s; }
+.section-block:nth-child(3) { animation-delay: 0.3s; }
+.section-block:nth-child(4) { animation-delay: 0.4s; }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .section-block {
+        padding: 20px;
+    }
+    
+    .topic-link {
+        padding: 15px;
+    }
+    
+    .topic-title {
+        font-size: 1rem;
+    }
+    
+    .topic-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .questions-button {
+        width: 100%;
+        text-align: center;
+    }
+}

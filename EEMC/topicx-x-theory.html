@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема X.X - Название темы | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационная панель -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">← На главную</a>
+                <div class="nav-links">
+                    <a href="#section1" class="nav-link">Введение</a>
+                    <a href="#section2" class="nav-link">Основные понятия</a>
+                    <a href="#section3" class="nav-link">Примеры кода</a>
+                    <a href="#section4" class="nav-link">Заключение</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#">Раздел X</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Тема X.X</span>
+        </div>
+
+        <!-- Заголовок темы -->
+        <header class="theory-header">
+            <h1 class="theory-title">Тема X.X: Название темы</h1>
+            <p class="theory-subtitle">Краткое описание темы и что будет рассмотрено в этом разделе</p>
+        </header>
+
+        <main class="theory-content">
+            <!-- Секция 1: Введение -->
+            <section id="section1" class="content-section">
+                <h2 class="section-heading">Введение</h2>
+                
+                <div class="text-content">
+                    <p>Это вводный текст, который объясняет основные концепции темы. Здесь можно разместить общую информацию и подготовить студента к изучению материала.</p>
+                    
+                    <div class="info-box">
+                        <strong>💡 Важно:</strong> Ключевая информация, на которую стоит обратить особое внимание.
+                    </div>
+
+                    <div class="image-container">
+                        <img src="../images/example-diagram.svg" alt="Диаграмма, объясняющая концепцию" class="theory-image">
+                        <p class="image-caption">Рис. 1.1 - Диаграмма, иллюстрирующая основные концепции</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 2: Основные понятия -->
+            <section id="section2" class="content-section">
+                <h2 class="section-heading">Основные понятия</h2>
+                
+                <div class="text-content">
+                    <h3>Подраздел 2.1</h3>
+                    <p>Подробное объяснение первого ключевого понятия с примерами и пояснениями.</p>
+
+                    <h3>Подраздел 2.2</h3>
+                    <p>Объяснение второго ключевого понятия. Можно использовать списки для лучшей структуризации:</p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Пункт 1:</strong> Описание первого пункта</li>
+                        <li><strong>Пункт 2:</strong> Описание второго пункта</li>
+                        <li><strong>Пункт 3:</strong> Описание третьего пункта</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Внимание:</strong> Предупреждение о возможных ошибках или сложных моментах.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 3: Примеры кода -->
+            <section id="section3" class="content-section">
+                <h2 class="section-heading">Примеры кода</h2>
+                
+                <div class="text-content">
+                    <p>В этом разделе представлены практические примеры кода на Go:</p>
+
+                    <!-- Пример 1: Простой код -->
+                    <div class="code-example">
+                        <h4>Пример 3.1 - Базовая программа на Go</h4>
+                        <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    // Простой вывод на экран
+    fmt.Println("Hello, World!")
+    
+    // Объявление переменных
+    var name string = "Go"
+    version := 1.21
+    
+    fmt.Printf("Язык: %s, Версия: %.1f\n", name, version)
+}</code></pre>
+                    </div>
+
+                    <!-- Пример 2: Более сложный код -->
+                    <div class="code-example">
+                        <h4>Пример 3.2 - Функции и структуры</h4>
+                        <pre><code class="language-go">package main
+
+import (
+    "fmt"
+    "math"
+)
+
+// Структура Point представляет точку в 2D-пространстве
+type Point struct {
+    X, Y float64
+}
+
+// Метод для вычисления расстояния между точками
+func (p Point) Distance(q Point) float64 {
+    return math.Hypot(q.X-p.X, q.Y-p.Y)
+}
+
+// Функция для создания новой точки
+func NewPoint(x, y float64) Point {
+    return Point{X: x, Y: y}
+}
+
+func main() {
+    p1 := NewPoint(0, 0)
+    p2 := NewPoint(3, 4)
+    
+    distance := p1.Distance(p2)
+    fmt.Printf("Расстояние между точками: %.2f\n", distance)
+}</code></pre>
+                    </div>
+
+                    <!-- Пример 3: Работа с горутинами -->
+                    <div class="code-example">
+                        <h4>Пример 3.3 - Параллелизм с горутинами</h4>
+                        <pre><code class="language-go">package main
+
+import (
+    "fmt"
+    "sync"
+    "time"
+)
+
+func worker(id int, wg *sync.WaitGroup) {
+    defer wg.Done()
+    
+    fmt.Printf("Воркер %d начал работу\n", id)
+    time.Sleep(time.Second)
+    fmt.Printf("Воркер %d завершил работу\n", id)
+}
+
+func main() {
+    var wg sync.WaitGroup
+    
+    // Запускаем несколько горутин
+    for i := 1; i <= 3; i++ {
+        wg.Add(1)
+        go worker(i, &wg)
+    }
+    
+    // Ждем завершения всех горутин
+    wg.Wait()
+    fmt.Println("Все воркеры завершили работу")
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 4: Заключение -->
+            <section id="section4" class="content-section">
+                <h2 class="section-heading">Заключение</h2>
+                
+                <div class="text-content">
+                    <p>В этой теме мы рассмотрели основные концепции программирования на Go. Ключевые выводы:</p>
+                    
+                    <div class="summary-box">
+                        <h4>Ключевые моменты:</h4>
+                        <ul>
+                            <li>Пункт первый для запоминания</li>
+                            <li>Пункт второй для запоминания</li>
+                            <li>Пункт третий для запоминания</li>
+                        </ul>
+                    </div>
+
+                    <div class="next-steps">
+                        <h4>Что дальше?</h4>
+                        <p>В следующей теме мы рассмотрим более сложные аспекты программирования на Go, включая...</p>
+                        <a href="topicX-X-questions.html" class="next-link">Перейти к вопросам для самопроверки →</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Панель навигации между темами -->
+        <div class="theory-navigation">
+            <a href="previous-topic.html" class="nav-button prev">← Предыдущая тема</a>
+            <a href="../index.html" class="nav-button home">На главную</a>
+            <a href="next-topic.html" class="nav-button next">Следующая тема →</a>
+        </div>
+
+        <footer class="theory-footer">
+            <p>&copy; 2024 ЭУМК "Программирование на Go". Материал подготовлен для учебных целей.</p>
+        </footer>
+    </div>
+
+    <script src="../js/code-highlight.js"></script>
+</body>
+</html>
