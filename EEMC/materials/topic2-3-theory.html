@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 2.3 - Операции | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационная панель -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">← На главную</a>
+                <div class="nav-links">
+                    <a href="#arithmetic" class="nav-link">Арифметические</a>
+                    <a href="#comparison" class="nav-link">Сравнения</a>
+                    <a href="#logical" class="nav-link">Логические</a>
+                    <a href="#bitwise" class="nav-link">Поразрядные</a>
+                    <a href="#assignment" class="nav-link">Присвоения</a>
+                    <a href="#priority" class="nav-link">Приоритет</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#">Раздел 2</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Тема 2.3: Операции</span>
+        </div>
+
+        <!-- Заголовок темы -->
+        <header class="theory-header">
+            <h1 class="theory-title">Тема 2.3: Операции</h1>
+            <p class="theory-subtitle">Арифметические, логические, поразрядные операции и операции присвоения в Go</p>
+        </header>
+
+        <main class="theory-content">
+            <!-- Секция 1: Арифметические операции -->
+            <section id="arithmetic" class="content-section">
+                <h2 class="section-heading">Арифметические операции</h2>
+                
+                <div class="text-content">
+                    <p>Язык Go поддерживает все основные арифметические операции, которые производятся над числами. Значения, которые участвуют в операции, называются операндами.</p>
+
+                    <div class="operations-grid">
+                        <div class="operation-item">
+                            <h4>+ (сложение)</h4>
+                            <p>Возвращает сумму двух чисел</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a = 4
+var b = 6
+var c = a + b  // 10</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>- (вычитание)</h4>
+                            <p>Возвращает разность двух чисел</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a = 4
+var b = 6
+var c = a - b  // -2</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>* (умножение)</h4>
+                            <p>Возвращает произведение двух чисел</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a = 4
+var b = 6
+var c = a * b  // 24</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>/ (деление)</h4>
+                            <p>Возвращает результат деления двух чисел</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 10
+var b int = 4
+var c int = a / b  // 2
+
+var k float32 = 10
+var l float32 = 4
+var m float32 = k / l  // 2.5</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>% (остаток от деления)</h4>
+                            <p>Возвращает остаток от деления (только для целых чисел)</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var c int = 35 % 3  // 2 (35 - 33 = 2)</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>++ (инкремент)</h4>
+                            <p>Увеличивает значение переменной на единицу</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+a++  // 9</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>-- (декремент)</h4>
+                            <p>Уменьшает значение переменной на единицу</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+a--  // 7</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Важно при делении:</strong> Если в операции участвуют два целых числа, то результат деления будет округляться до целого числа, даже если результат присваивается переменной типа float32/float64:
+                        <pre><code class="language-go">var m float32 = 10 / 4  // 2, а не 2.5</code></pre>
+                        <p>Чтобы результат представлял вещественное число, один из операндов также должен представлять вещественное число:</p>
+                        <pre><code class="language-go">var m float32 = 10 / 4.0  // 2.5</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 2: Операции сравнения -->
+            <section id="comparison" class="content-section">
+                <h2 class="section-heading">Операции сравнения</h2>
+                
+                <div class="text-content">
+                    <p>Операции сравнения позволяют сравнить два значения. Все операции сравнения возвращают значение типа <code>bool</code>: <code>true</code> (если условие истинно) или <code>false</code> (если условие ложно).</p>
+
+                    <div class="operations-grid">
+                        <div class="operation-item">
+                            <h4>== (равно)</h4>
+                            <p>Возвращает true, если оба операнда равны</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+var b int = 3
+var c bool = a == b  // false</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>!= (не равно)</h4>
+                            <p>Возвращает true, если операнды не равны</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+var b int = 3
+var c bool = a != b  // true</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>> (больше)</h4>
+                            <p>Возвращает true, если первый операнд больше второго</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+var b int = 3
+var c bool = a > b  // true</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>< (меньше)</h4>
+                            <p>Возвращает true, если первый операнд меньше второго</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+var b int = 3
+var c bool = a < b  // false</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>>= (больше или равно)</h4>
+                            <p>Возвращает true, если первый операнд больше или равен второму</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+var b int = 3
+var c bool = a >= b  // true</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4><= (меньше или равно)</h4>
+                            <p>Возвращает true, если первый операнд меньше или равен второму</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 8
+var b int = 3
+var c bool = a <= b  // false</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 3: Логические операции -->
+            <section id="logical" class="content-section">
+                <h2 class="section-heading">Логические операции</h2>
+                
+                <div class="text-content">
+                    <p>Логические операции сравнивают два условия. Они применяются к двум логическим значениям, которые часто представляют результат операций сравнения.</p>
+
+                    <div class="operations-grid">
+                        <div class="operation-item">
+                            <h4>! (отрицание)</h4>
+                            <p>Инвертирует значение. Если операнд равен true, то возвращает false, иначе возвращает true</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a bool = true
+var b bool = !a  // false
+var c bool = !b  // true</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>&& (логическое И)</h4>
+                            <p>Возвращает true, если оба операнда не равны false</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var b bool = 4 > 5 && 6 > 8  // false
+var c bool = 3 <= 5 && 10 > 8  // true</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>|| (логическое ИЛИ)</h4>
+                            <p>Возвращает true, если хотя бы один операнд не равен false</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var b bool = 4 > 5 || 6 > 8  // false
+var c bool = 3 == 5 || 10 > 8  // true</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 4: Поразрядные операции -->
+            <section id="bitwise" class="content-section">
+                <h2 class="section-heading">Поразрядные операции</h2>
+                
+                <div class="text-content">
+                    <p>Поразрядные операции проводятся только над разрядами целочисленных операндов.</p>
+
+                    <h3>Операции сдвига</h3>
+                    <div class="operations-grid">
+                        <div class="operation-item">
+                            <h4><< (сдвиг влево)</h4>
+                            <p>Сдвигает битовое представление числа влево на указанное количество разрядов</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 2 << 2  // 10 << 2 = 1000 = 8</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>>> (сдвиг вправо)</h4>
+                            <p>Сдвигает битовое представление числа вправо на указанное количество разрядов</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var b int = 16 >> 3  // 10000 >> 3 = 10 = 2</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Поразрядные логические операции</h3>
+                    <div class="operations-grid">
+                        <div class="operation-item">
+                            <h4>& (И)</h4>
+                            <p>Поразрядное умножение. Возвращает 1, если оба соответствующих разряда равны 1</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var b int = 6 & 2  // 110 & 010 = 010 = 2</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>| (ИЛИ)</h4>
+                            <p>Поразрядное сложение. Возвращает 1, если хотя бы один разряд равен 1</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var a int = 5 | 2  // 101 | 010 = 111 = 7</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>^ (исключающее ИЛИ)</h4>
+                            <p>Возвращает 1, если только один из соответствующих разрядов равен 1</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var c int = 5 ^ 2  // 101 ^ 010 = 111 = 7</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="operation-item">
+                            <h4>&^ (И НЕ)</h4>
+                            <p>Сброс бита. Каждый бит результата равен 0, если соответствующий бит второго операнда равен 1</p>
+                            <div class="code-example">
+                                <pre><code class="language-go">var d int = 5 &^ 6  // 101 &^ 110 = 001 = 1</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>💡 Двоичное представление:</strong> Для отображения чисел в двоичном формате используйте спецификатор <code>%b</code> в функции <code>fmt.Printf()</code>:
+                        <pre><code class="language-go">var a int = 2
+fmt.Printf("a = %b\n", a)  // a = 10
+a = a << 2
+fmt.Printf("a = %b\n", a)  // a = 1000</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 5: Операции присвоения -->
+            <section id="assignment" class="content-section">
+                <h2 class="section-heading">Операции присвоения</h2>
+                
+                <div class="text-content">
+                    <p>Операторы присвоения устанавливают значение переменной. Они сначала вычисляют выражение справа, затем присваивают результат переменной слева.</p>
+
+                    <div class="operations-table">
+                        <div class="table-row header">
+                            <div class="table-cell">Оператор</div>
+                            <div class="table-cell">Описание</div>
+                            <div class="table-cell">Пример</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>=</code></div>
+                            <div class="table-cell">Простое присвоение</div>
+                            <div class="table-cell"><code>var a int = 10</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>:=</code></div>
+                            <div class="table-cell">Краткое определение</div>
+                            <div class="table-cell"><code>b := 5</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>+=</code></div>
+                            <div class="table-cell">Присвоение суммы</div>
+                            <div class="table-cell"><code>a += b // a = a + b</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>-=</code></div>
+                            <div class="table-cell">Присвоение разности</div>
+                            <div class="table-cell"><code>a -= b // a = a - b</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>*=</code></div>
+                            <div class="table-cell">Присвоение произведения</div>
+                            <div class="table-cell"><code>a *= 10 // a = a * 10</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>/=</code></div>
+                            <div class="table-cell">Присвоение частного</div>
+                            <div class="table-cell"><code>a /= b // a = a / b</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>%=</code></div>
+                            <div class="table-cell">Присвоение остатка</div>
+                            <div class="table-cell"><code>a %= 15 // a = a % 15</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code><<=</code></div>
+                            <div class="table-cell">Присвоение сдвига влево</div>
+                            <div class="table-cell"><code>a <<= 2 // a = a << 2</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>>>=</code></div>
+                            <div class="table-cell">Присвоение сдвига вправо</div>
+                            <div class="table-cell"><code>a >>= 1 // a = a >> 1</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>&=</code></div>
+                            <div class="table-cell">Присвоение поразрядного И</div>
+                            <div class="table-cell"><code>a &= 8 // a = a & 8</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>^=</code></div>
+                            <div class="table-cell">Присвоение исключающего ИЛИ</div>
+                            <div class="table-cell"><code>a ^= 10 // a = a ^ 10</code></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"><code>|=</code></div>
+                            <div class="table-cell">Присвоение поразрядного ИЛИ</div>
+                            <div class="table-cell"><code>a |= 5 // a = a | 5</code></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 6: Приоритет операций -->
+            <section id="priority" class="content-section">
+                <h2 class="section-heading">Приоритет операций</h2>
+                
+                <div class="text-content">
+                    <p>Приоритет оператора определяет порядок выполнения операторов в выражении. Операторы с высоким приоритетом выполняются первыми.</p>
+
+                    <div class="priority-table">
+                        <div class="table-row header">
+                            <div class="table-cell">Приоритет</div>
+                            <div class="table-cell">Операторы</div>
+                            <div class="table-cell">Ассоциативность</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Высокий</div>
+                            <div class="table-cell"><code>() [] -> . ++ --</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>+ - ! ~ ++ -- (type) * & sizeof</code></div>
+                            <div class="table-cell">Справа налево</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>* / %</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>+ -</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code><< >></code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>< <= > >=</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>== !=</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>&</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>^</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>|</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell"></div>
+                            <div class="table-cell"><code>&&</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Низкий</div>
+                            <div class="table-cell"><code>||</code></div>
+                            <div class="table-cell">Слева направо</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Панель навигации между темами -->
+        <div class="theory-navigation">
+            <a href="topic2-2-theory.html" class="nav-button prev">← Предыдущая тема</a>
+            <a href="../index.html" class="nav-button home">На главную</a>
+            <a href="topic2-3-theory.html" class="nav-button next">Следующая тема →</a>
+        </div>
+
+        <footer class="theory-footer">
+            <p>&copy; 2025 ЭУМК "Программирование на Go". Материал подготовлен на основе открытых источников.</p>
+        </footer>
+    </div>
+
+    <script src="../js/code-highlight.js"></script>
+</body>
+</html>
