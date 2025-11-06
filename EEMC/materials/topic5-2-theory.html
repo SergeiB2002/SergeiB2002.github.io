@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 5.2 - Структуры | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационная панель -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">← На главную</a>
+                <div class="nav-links">
+                    <a href="#section1" class="nav-link">Определение</a>
+                    <a href="#section2" class="nav-link">Создание</a>
+                    <a href="#section3" class="nav-link">Указатели</a>
+                    <a href="#section4" class="nav-link">Вложенные структуры</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="../index.html">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#">Раздел 5</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Тема 5.2</span>
+        </div>
+
+        <!-- Заголовок темы -->
+        <header class="theory-header">
+            <h1 class="theory-title">Тема 5.2: Структуры</h1>
+            <p class="theory-subtitle">Составные типы данных для представления объектов с набором полей</p>
+        </header>
+
+        <main class="theory-content">
+            <!-- Секция 1: Определение структур -->
+            <section id="section1" class="content-section">
+                <h2 class="section-heading">Определение структур</h2>
+                
+                <div class="text-content">
+                    <p>Структуры представляют составной тип данных, определяемый разработчиком и служащий для представления каких-либо объектов. Структуры содержат набор полей, которые представляют различные атрибуты объекта.</p>
+                    
+                    <div class="code-example">
+                        <h4>Синтаксис определения структуры</h4>
+                        <pre><code class="language-go">type имя_структуры struct{
+    поле1 тип_поля1 
+    поле2 тип_поля2
+    ...............
+    полеN тип_поляN
+}</code></pre>
+                    </div>
+
+                    <h3>Пример определения структуры</h3>
+                    <p>Определим структуру, которая представляет человека:</p>
+                    
+                    <div class="code-example">
+                        <h4>Структура person</h4>
+                        <pre><code class="language-go">type person struct{
+    name string
+    age int
+}</code></pre>
+                    </div>
+
+                    <p>Структура называется <code>person</code>. Она имеет два поля: <code>name</code> (имя человека, представляет тип <code>string</code>) и <code>age</code> (возраст человека, представляет тип <code>int</code>).</p>
+
+                    <h3>Совмещение полей одного типа</h3>
+                    <p>Если структура имеет поля одного типа, то их можно совместить:</p>
+                    
+                    <div class="code-example">
+                        <h4>Совмещенные поля</h4>
+                        <pre><code class="language-go">type person struct{
+    name, company string
+    age int
+}</code></pre>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>💡 Важно:</strong> Структуры можно определять как на верхнем уровне файла, так и внутри функций.
+                    </div>
+
+                    <div class="declaration-methods">
+                        <div class="method-item">
+                            <h4>Определение на верхнем уровне</h4>
+                            <pre><code class="language-go">package main
+ 
+type person struct{
+    name string
+    age int
+}
+ 
+func main() {
+}</code></pre>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Определение внутри функции</h4>
+                            <pre><code class="language-go">package main
+ 
+func main() {
+    type person struct{
+        name string
+        age int
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 2: Создание и инициализация -->
+            <section id="section2" class="content-section">
+                <h2 class="section-heading">Создание и инициализация структур</h2>
+                
+                <div class="text-content">
+                    <h3>Создание переменной структуры</h3>
+                    <p>Структура представляет новый тип данных, и мы можем определить переменную данного типа:</p>
+                    
+                    <div class="code-example">
+                        <h4>Создание переменной структуры</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+ 
+type person struct{
+    name string
+    age int
+}
+ 
+func main() {
+    var tom person   // переменная структуры person
+    fmt.Println(tom) // { 0}
+}</code></pre>
+                    </div>
+
+                    <p>Поля структуры получают значения по умолчанию: для строковых полей - пустая строка, для числовых - 0.</p>
+
+                    <h3>Способы инициализации</h3>
+                    
+                    <div class="declaration-methods">
+                        <div class="method-item">
+                            <h4>Позиционная инициализация</h4>
+                            <pre><code class="language-go">var tom person = person{"Tom", 23}</code></pre>
+                            <p>Значения передаются полям в порядке их определения</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Именованная инициализация</h4>
+                            <pre><code class="language-go">var alice person = person{
+    age: 23, 
+    name: "Alice"
+}</code></pre>
+                            <p>Порядок указания полей не важен</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Сокращенная инициализация</h4>
+                            <pre><code class="language-go">tom := person{name: "Tom", age: 24}
+bob := person{name: "Bob", age: 31}</code></pre>
+                            <p>Короткий синтаксис с автоматическим определением типа</p>
+                        </div>
+                    </div>
+
+                    <h3>Обращение к полям структуры</h3>
+                    
+                    <div class="code-example">
+                        <h4>Доступ к полям структуры</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+ 
+type person struct{
+    name string
+    age int
+}
+ 
+func main() {
+    var tom = person{name: "Tom", age: 24}
+    fmt.Println(tom.name)       // Tom
+    fmt.Println(tom.age)        // 24
+     
+    tom.age = 38    // изменяем значение
+    fmt.Println(tom.name, tom.age)      // Tom 38
+}</code></pre>
+                    </div>
+
+                    <h3>Анонимные структуры</h3>
+                    <p>Необязательно объявлять новый тип при объявлении структур:</p>
+                    
+                    <div class="code-example">
+                        <h4>Анонимная структура</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+ 
+func main() {
+    tom := struct{
+        name string
+        age int
+    }{
+        name: "Tom",
+        age: 41,
+    }
+ 
+    fmt.Println(tom.name) // Tom
+    fmt.Println(tom.age) // 41
+}</code></pre>
+                    </div>
+
+                    <h3>Анонимные поля структур</h3>
+                    <p>В языке Go нет необходимости определять имя полей структуры:</p>
+                    
+                    <div class="code-example">
+                        <h4>Структура с анонимными полями</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    string
+    int
+}
+  
+func main() {
+    tom := person{"Tom", 41}
+    fmt.Println(tom)    // {Tom 41}
+}</code></pre>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Внимание:</strong> Если у нас есть два или более полей одного типа данных, мы можем использовать только одно поле как анонимное. Для остальных мы должны указать имена полей.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 3: Указатели и функции -->
+            <section id="section3" class="content-section">
+                <h2 class="section-heading">Указатели на структуры и функции</h2>
+                
+                <div class="text-content">
+                    <h3>Указатели на структуры</h3>
+                    <p>Можно создавать указатели на структуры, которые хранят адрес структур:</p>
+                    
+                    <div class="code-example">
+                        <h4>Работа с указателями на структуры</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    name string
+    age int
+}
+  
+func main() {
+    tom := person{name: "Tom", age: 22}
+    var p_tom *person = &tom
+    
+    // доступ через указатель
+    fmt.Println(p_tom.name)        // Tom
+    fmt.Println(p_tom.age)         // 22
+    
+    p_tom.age = 23  // меняем значение
+    fmt.Println(tom.age)           // 23
+    
+    // доступ через разыменование
+    fmt.Println((*p_tom).name)     // Tom
+}</code></pre>
+                    </div>
+
+                    <h3>Создание структур с помощью функции new()</h3>
+                    
+                    <div class="code-example">
+                        <h4>Использование функции new</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    name string
+    age int
+}
+  
+func main() {
+    tom := new(person) 
+    fmt.Println(*tom) // { 0} 
+    
+    tom.name = "Tom"
+    tom.age = 41
+    fmt.Println(*tom)   // {Tom 41}
+}</code></pre>
+                    </div>
+
+                    <h3>Копирование структур</h3>
+                    <p>При копировании одной структуры в другую создается новая копия:</p>
+                    
+                    <div class="code-example">
+                        <h4>Копирование структур</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    name string
+    age int
+}
+ 
+func main() {
+    tom := person{"Tom", 41}
+    tomas := tom  // копирование структуры tom
+    tomas.age = 18
+    
+    // изменение одной структуры не влияет на другую
+    fmt.Println(tom.age)    // 41
+    fmt.Println(tomas.age)  // 18
+}</code></pre>
+                    </div>
+
+                    <h3>Передача структур в функции</h3>
+                    
+                    <div class="code-example">
+                        <h4>Структуры как параметры функций</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    name string
+    age int
+}
+ 
+func increment_age(user *person){
+    user.age += 1
+    fmt.Println(*user)   // {Tom 42}
+}
+ 
+func main() {
+    tom := person{"Tom", 41}
+    increment_age(&tom)
+    fmt.Println(tom)    // {Tom 42}
+}</code></pre>
+                    </div>
+
+                    <h3>Сравнение структур</h3>
+                    <p>Структуры считаются равными, если их поля и соответствующие значения одинаковы:</p>
+                    
+                    <div class="code-example">
+                        <h4>Сравнение структур</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{ 
+    name string
+    age int
+}
+ 
+func main() {
+    tom := person{"Tom", 41}
+    bob := person{"Bob", 41}
+    tomas := person{"Tom", 41}
+    
+    fmt.Println("tom == bob:", tom == bob)      // false
+    fmt.Println("tom == tomas:", tom == tomas)  // true
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 4: Вложенные структуры -->
+            <section id="section4" class="content-section">
+                <h2 class="section-heading">Вложенные и встроенные структуры</h2>
+                
+                <div class="text-content">
+                    <p>Язык Go позволяет определять поля структур как значения других структур. Различают вложенные и встроенные структуры.</p>
+
+                    <h3>Вложенные структуры (nested struct)</h3>
+                    <p>Определяются как именованные поля внутри другой структуры:</p>
+                    
+                    <div class="code-example">
+                        <h4>Пример вложенных структур</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    name string
+    age int
+}
+ 
+type account struct{
+    login string
+    password string
+    person_info person  // вложенная структура
+}
+  
+func main() {
+    tom := account{
+        login: "tom@hmail.com",
+        password: "12345678",
+        person_info: person{
+            name: "Tom", 
+            age: 41,
+        },
+    } 
+    
+    fmt.Println(tom)    // {tom@hmail.com 12345678 {Tom 41}}
+    
+    // обращение к полям вложенной структуры
+    fmt.Println("Name: ", tom.person_info.name) // Name: Tom
+}</code></pre>
+                    </div>
+
+                    <h3>Встроенные структуры (embedded struct)</h3>
+                    <p>Определяются без имени поля, что продвигает их поля во внешнюю структуру:</p>
+                    
+                    <div class="code-example">
+                        <h4>Пример встроенных структур</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+  
+type person struct{
+    name string
+    age int
+}
+ 
+type account struct{
+    login string
+    password string
+    person  // встроенная структура
+}
+  
+func main() {
+    tom := account{
+        "tom@hmail.com",
+        "12345678",
+        person{"Tom", 41},
+    } 
+    
+    fmt.Println(tom)    // {tom@hmail.com 12345678 {Tom 41}}
+    
+    // обращение к полям встроенной структуры
+    fmt.Println("Name: ", tom.person.name) // Name: Tom
+}</code></pre>
+                    </div>
+
+                    <h3>Структуры с ссылками на себя</h3>
+                    <p>Структура не может иметь поле, которое представляет тип этой же структуры, но может иметь указатель на себя:</p>
+                    
+                    <div class="code-example">
+                        <h4>Структура узла связного списка</h4>
+                        <pre><code class="language-go">package main
+import "fmt"
+ 
+type node struct{
+    value int
+    next *node  // указатель на структуру того же типа
+}
+ 
+func main() {
+    first := node{value: 4}
+    second := node{value: 5}
+    third := node{value: 6}
+    
+    first.next = &second
+    second.next = &third
+    
+    var current *node = &first
+    for current != nil{
+        fmt.Println(current.value)
+        current = current.next
+    }
+    // Вывод:
+    // 4
+    // 5
+    // 6
+}</code></pre>
+                    </div>
+
+                    <div class="summary-box">
+                        <h4>Ключевые моменты:</h4>
+                        <ul>
+                            <li>Структуры позволяют создавать составные типы данных для представления объектов</li>
+                            <li>Поддерживают различные способы инициализации и создания</li>
+                            <li>Работа с указателями на структуры упрощает модификацию данных</li>
+                            <li>Вложенные и встроенные структуры позволяют создавать сложные иерархии данных</li>
+                            <li>Структуры могут содержать указатели на себя для создания рекурсивных структур данных</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Панель навигации между темами -->
+        <div class="theory-navigation">
+            <a href="topic5-1-theory.html" class="nav-button prev">← Псевдонимы</a>
+            <a href="../index.html" class="nav-button home">На главную</a>
+            <a href="topic5-3-theory.html" class="nav-button next">Следующая тема →</a>
+        </div>
+
+        <footer class="theory-footer">
+            <p>&copy; 2025 ЭУМК "Программирование на Go". Материал подготовлен для учебных целей.</p>
+        </footer>
+    </div>
+
+    <script src="../js/code-highlight.js"></script>
+</body>
+</html>
