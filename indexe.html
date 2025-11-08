@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Resume - Brezitskii Sergei Olegovich - Development of a System for Modeling the Behavior of a Group of Agents in Space</title>
+  <link rel="stylesheet" type="text/css" href="css/master_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body lang="ru">
+  <!-- Кнопка для открытия/закрытия меню -->
+  <div id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Выдвижное меню -->
+  <nav id="side-menu">
+    <div id="menu-close">&times;</div>
+    <a class="menu-item active" href="indexe.html">Resume</a>
+    <a class="menu-item" href="diss/indexe.html">Abstract</a>
+  </nav>
+
+  <!-- Оверлей для закрытия меню при клике вне его -->
+  <div id="overlay"></div>
+
+  <!-- Основной контент в полупрозрачном контейнере -->
+  <div id="content-container">
+
+    <div id="topblock">
+		<div id="langbox">
+			<a href="indexe.html"><img src="images/en.png" alt="English" title="English" width="24" height="20"></a> 
+		</div>
+		<div id="donntu">
+			<a href="https://www.kubsu.ru/" target="_blank">КубГУ</a>
+		</div>
+	</div> <!-- topblock --> 
+
+	  <div id="header">
+		  <div id="photomag">
+			  <a href="ivanov_big.jpg">
+				  <img src="photo.jpg" width="180" height="240" title="Магистр КубГУ Брезицкий Сергей Олегович" alt="Магистр КубГУ Брезицкий Сергей Олегович" />
+			  </a>
+		  </div>
+		  <div id="headertext">
+			<h1 class="hdr">Brezitskii Sergei Olegovich</h2>
+			<h3 class="hdr">Faculty of Computer Technologies and Applied Mathematics</h3>
+			<h3 class="hdr">Department of Information Technologies</h3>
+			<h3 class="hdr">Specialty "Technologies for programming and development of information and communication systems"</h3>
+			<h2 class="hdr">Development of a System for Modeling the Behavior of a Group of Agents in Space</h1>
+			<h3 class="hdr">Scientific Supervisor: Candidate of Technical Sciences, Assoc. Prof. Aleksey Aleksandrovich Polupanov</h3>
+		  </div>
+	  </div> <!-- header -->
+
+	  <div id="middleblock">
+		  <div id="maintext">
+			  <h1>Brief resume</h1>
+			  <table id="resume">
+				  <tr class=odd>
+					  <td class=c1>Name
+					  <td class=c2>Brezitskii Sergei Olegovich
+				  <tr class=even>
+					  <td class=c1>Date of birth
+					  <td class=c2>Apr 2, 2002
+				  <tr class=odd>
+					  <td class=c1>Place of birth
+					  <td class=c2>Noyabrsk
+				  <tr class=even>
+					  <td class=c1>Schools
+					  <td class=c2>MOU Secondary School No.94, grades 1-4, 2009-2013;<br>MOU Secondary School No.78, grades 5-11, 2013-2020
+				  <tr class=odd>
+					  <td class=c1>Universities
+					  <td class=c2>KubSU bachelor's degree 2020-2024,<br>KubSU master's degree 2024-2026
+				  <tr class=even>
+					  <td class=c1>Average score
+					  <td class=c2>4,4
+				  <tr class=odd>
+					  <td class=c1>Languages
+					  <td class=c2>Russian - fluent; English - B2 (Upper Intermediate)
+				  <tr class=even>
+					  <td class=c1>Personal achievements
+					  <td class=c2>Passed the Cambridge International FCE exam at level B2 (2020)
+				  <tr class=odd>
+					<td class=c1>Hobbies and interests
+					<td class=c2>Gardening, cooking;<br>Games: Action/RPG, racing, any co-op, Blue Archive;<br>Books: science fiction, detective stories
+				  <tr class=even>
+					<td class=c1>Personal qualities
+					<td class=c2>Independence, punctuality, discipline, communication skills, openness
+				  <tr class=odd>
+					<td class=c1>Professional and computer skills
+					<td class=c2>1. Operating systems: Windows, Linux<br>2. Applied areas: System analysis, Machine learning, Databases, Data Science<br>3. Programming languages: Python, Java, C++, C#<br>4. Development environments: VS Code, PyCharm
+				  <tr class=even>
+					<td class=c1>Additional courses, internships, grants
+					<td class=c2>2024<br>System Analysis<br>ASTON
+				  <tr class=odd>
+					<td class=c1>Professional experience
+					<td class=c2>Absent
+				  <tr class=even>
+					<td class=c1>Future plans
+					<td class=c2>Start a family; travel to Japan, China, North Korea
+				  <tr class=odd>
+					<td class=c1>Contact information
+					<td class=c2>VKontakte: https://vk.com/zsbr2002<br>Email: sbr2002@mail.ru
+			  </table>
+		  </div> <!-- maintext -->
+	  </div> <!-- middleblock -->
+
+	  <div id="menub">
+		  <a class="mitemb" href="diss/indexe.html">Abstarct</a>
+	  </div>
+  </div> <!-- content-container -->
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+    const menuClose = document.getElementById('menu-close');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+    
+    function openMenu() {
+      body.classList.add('menu-active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      body.classList.remove('menu-active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+  });
+</script>
+
+</body>
+</html>

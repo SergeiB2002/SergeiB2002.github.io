@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Abstract - Development of a System for Modeling the Behavior of a Group of Agents in Space - Brezitskii Sergei Olegovich</title>
+  <link rel="stylesheet" type="text/css" href="../css/master_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body lang="en">
+  <!-- Menu toggle button -->
+  <div id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Sliding menu -->
+  <nav id="side-menu">
+    <div id="menu-close">&times;</div>
+    <a class="menu-item" href="../indexe.html">Resume</a>
+    <a class="menu-item active" href="indexe.html">Abstract</a>
+  </nav>
+
+  <!-- Overlay to close menu when clicking outside -->
+  <div id="overlay"></div>
+
+  <!-- Main content in semi-transparent container -->
+  <div id="content-container">
+	  <div id="topblock">
+		  <div id="langbox">
+			  <a href="index.html"><img src="../images/ru.png" alt="Русский" title="Русский" width="24" height="20" border=0></a> 
+		  </div>
+		  <div id="donntu">
+			  <a href="https://www.kubsu.ru/" target="_blank">KubSU</a>
+		  </div>
+	  </div>
+
+	  <div id="header">
+		  <div id="photomag">
+			  <a href="../ivanov_big.jpg"><img src="../photo.jpg"  width=180 height=240	title="Master of KubSU Brezitskii Sergei Olegovich" alt="Master of KubSU Brezitskii Sergei Olegovich" border=0></a>
+		  </div>
+		  <div id="headertext">
+			<h1 class="hdr">Brezitskii Sergei Olegovich</h2>
+			<h3 class="hdr">Faculty of Computer Technologies and Applied Mathematics</h3>
+			<h3 class="hdr">Department of Information Technologies</h3>
+			<h3 class="hdr">Specialty "Technologies for programming and development of information and communication systems"</h3>
+			<h2 class="hdr">Development of a System for Modeling the Behavior of a Group of Agents in Space</h1>
+			<h3 class="hdr">Scientific Supervisor: Candidate of Technical Sciences, Assoc. Prof. Aleksey Aleksandrovich Polupanov</h3>
+		  </div>
+	  </div>
+
+	  <div id="middleblock">
+		  <div id="maintext">
+			  
+			  <h1>Abstract on the Topic of the Graduation Work</h1>
+			  
+			  <h2>Table of Contents</h2>
+
+			  <ul class=content>
+				  <li class=ct1><a href="#p0">Introduction</a>
+				  <li class=ct1><a href="#p1">1. Analysis of Basic Concepts in Agent-Based Modeling</a>
+					<li class=ct2><a href="#p11">1.1 Agent</a>
+					<li class=ct2><a href="#p12">1.2 Agent Classification</a>
+					<li class=ct2><a href="#p13">1.3 Multi-Agent Systems</a>
+				  <li class=ct1><a href="#p2">2. Methods and Tools for Modeling</a>
+					<li class=ct2><a href="#p21">2.1 Selection of Simulation Software</a>
+					<li class=ct2><a href="#p22">2.2 Mathematical Model of Behavior Simulation</a>
+				  <li class=ct1><a href="#p3">3. Practical Modeling</a>
+					<li class=ct2><a href="#p31">3.1 Description of the Experimental Environment</a>
+					<li class=ct2><a href="#p32">3.2 Conducting the Initial Simulation</a>
+				  <li class=ct1><a href="#p4">Conclusion</a>
+				  <li class=ct1><a href="#ref">List of References</a>
+			  </ul>
+			  
+			  <a name=p0></a>
+			  <h2>Introduction</h2>
+			  
+			  <p>
+			  Modeling the behavior of intelligent agents in three-dimensional space is one of the key areas of modern applied mathematics and computer science. 
+        The relevance of this topic is due to the wide application of agent-based models in various fields - from robotics and virtual reality 
+        to computer games, transportation systems, and unmanned aerial vehicle control [1].
+			  </p>
+			  
+			  <p>
+			  Simulating agent behavior allows researchers to study complex systems consisting of multiple interacting elements and predict their evolution 
+        in diverse environmental conditions.
+			  </p>
+			  
+			  <p>
+			  The purpose of this work is to develop a mathematical model for simulating agent behavior in a three-dimensional environment and conduct 
+        an experiment on a basic building evacuation scenario. During the work, the main definitions in the field of agent-based modeling, 
+        navigation algorithms, and group behavior modeling were studied, as well as the tools and process for developing agent behavior models.
+			  </p>
+			  
+			  <p>
+			  In the practical part, a model was developed that allows users to conduct experiments on the basic scenario of agent evacuation from a building. 
+        The program was implemented in C# in the Unity environment.
+			  </p>
+			  
+			  <a name=p1></a>
+			  <h2>1. Analysis of Basic Concepts in Agent-Based Modeling</h2>
+			  
+			  <a name=p11></a>
+			  <h3>1.1 Agent</h3>
+			  
+			  <p>
+			  An agent (intelligent agent) is an entity that perceives the environment through sensors and acts upon it through actuators [2]. 
+        A rational agent acts in such a way as to maximize the expected value of a performance measure based on past experience and knowledge [1].
+			  </p>
+			  
+			  <div class=img>
+				  <img src="images/1.png" width=400 height=255 alt="Agents interact with the environment through sensors and actuators">
+				  <p class=imgcaption>Figure 1 — Agents interact with the environment through sensors and actuators</p>
+			  </div>
+			  
+			  <p>
+			  Mathematically, an agent can be described by a function:
+			  </p>
+			  
+			  <p class="formula">
+			  f:P* → A (1)
+			  </p>
+			  
+			  <p>
+			  where P* is a sequence of perceptions; A is a set of possible actions [2].
+			  </p>
+			  
+			  <a name=p12></a>
+			  <h3>1.2 Agent Classification</h3>
+			  
+			  <p>
+			  Agents are classified into five main types:
+			  </p>
+			  
+			  <ol>
+				  <li>Simple reflex agents — act based on current perception</li>
+				  <li>Model-based reflex agents — consider perception history and internal state</li>
+				  <li>Goal-based agents — strive to achieve a given goal</li>
+				  <li>Utility-based agents — maximize a utility function</li>
+				  <li>Learning agents — adapt to the environment through learning mechanisms [1]</li>
+			  </ol>
+			  
+			  <div class=img>
+				  <img src="images/2.png" width=400 height=255 alt="Schematic diagram of a simple reflex agent">
+				  <p class=imgcaption>Figure 2 — Schematic diagram of a simple reflex agent</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/3.png" width=400 height=255 alt="Schematic diagram of a model-based reflex agent">
+				  <p class=imgcaption>Figure 3 — Schematic diagram of a model-based reflex agent</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/4.png" width=400 height=255 alt="Schematic diagram of a model-based goal agent">
+				  <p class=imgcaption>Figure 4 — Schematic diagram of a model-based goal agent</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/5.png" width=400 height=255 alt="Schematic diagram of a model and utility-based agent">
+				  <p class=imgcaption>Figure 5 — Schematic diagram of a model and utility-based agent</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/6.png" width=400 height=255 alt="Schematic diagram of a learning agent">
+				  <p class=imgcaption>Figure 6 — Schematic diagram of a learning agent</p>
+			  </div>
+			  
+			  <a name=p13></a>
+			  <h3>1.3 Multi-Agent Systems</h3>
+			  
+			  <p>
+			  Multi-agent systems (MAS) consist of a group of loosely coupled autonomous agents that interact to achieve a common goal [3].
+        MAS classification includes:
+			  </p>
+			  
+			  <ul>
+				  <li>Homogeneous and heterogeneous systems [4]</li>
+				  <li>Hierarchical, holonic, coalitional, and team architectures [6, 7, 8]</li>
+			  </ul>
+			  
+			  <a name=p2></a>
+			  <h2>2. Methods and Tools for Modeling</h2>
+			  
+			  <a name=p21></a>
+			  <h3>2.1 Selection of Simulation Software</h3>
+			  
+			  <p>
+			  The following platforms were considered for model implementation:
+			  </p>
+			  
+			  <ul>
+				  <li>Unity3D — powerful engine for 3D visualization and physics, C# support [10]</li>
+				  <li>Unreal Engine — photorealistic graphics, visual programming through Blueprints [11]</li>
+				  <li>Blender — free software with Python support, but limited documentation</li>
+				  <li>AnyLogic — specialized software for agent-based modeling, but with limited 3D visualization [12]</li>
+			  </ul>
+			  
+			  <p>
+			  Unity3D was chosen due to its flexibility, NVIDIA PhysX physics support, and ML-Agents integration capability.
+			  </p>
+			  
+			  <a name=p22></a>
+			  <h3>2.2 Mathematical Model of Behavior Simulation</h3>
+			  
+			  <p>
+			  For simulating agent behavior in 3D space, a formal model was developed, including several interconnected components.
+        Let's consider the key components.
+			  </p>
+			  
+			  <p>
+			  The first component — agent formalization. Each agent is represented as an object with a set of parameters:
+			  </p>
+			  
+			  <ul>
+				  <li>position in space: r<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub>), defining the agent's current coordinates</li>
+				  <li>velocity: v<sub>i</sub>(t) = dr<sub>i</sub>/dt and direction of movement (usually a unit vector n<sub>i</sub>), determining movement dynamics</li>
+				  <li>target point or route — for example, a list of coordinates that the agent plans to pass through G = {g<sub>1</sub>, g<sub>2</sub>, ..., g<sub>n</sub>}, or a more complex goal representation (exit the building, reach a certain area)</li>
+				  <li>internal states (if necessary): energy or "health" level, status (e.g., "evacuating", "panic"), roles (regular agent or group leader), etc.</li>
+			  </ul>
+			  
+			  <p>
+			  The second component — movement mechanics. Helbing's social force model is used [13]:
+			  </p>
+			  
+			  <p class="formula">
+			  m<sub>i</sub>dv<sub>i</sub>/dt = F<sub>i</sub><sup>(goal)</sup> + Σ<sub>j≠i</sub>F<sub>ij</sub><sup>(rep)</sup> + Σ<sub>k</sub>F<sub>ik</sub><sup>(wall)</sup> (2)
+			  </p>
+			  
+			  <p>
+			  where:
+			  </p>
+			  
+			  <ul>
+				  <li>m<sub>i</sub>dv<sub>i</sub>/dt — inertia (mass m<sub>i</sub> and agent acceleration)</li>
+				  <li>F<sub>i</sub><sup>(goal)</sup> — force striving toward the agent's own goal (directed toward the nearest route point or exit and aiming to accelerate the agent to the desired speed)</li>
+				  <li>F<sub>ij</sub><sup>(rep)</sup> — repulsive forces from other agents j (prevent collisions, model personal space)</li>
+				  <li>F<sub>ik</sub><sup>(wall)</sup> — repulsive forces from obstacles k (walls, objects in the environment)</li>
+			  </ul>
+			  
+			  <p>
+			  The third component — navigation algorithms:
+			  </p>
+			  
+			  <ul>
+				  <li>A* — for shortest path finding [14]</li>
+				  <li>RRT — for planning in dynamic environments [15]</li>
+				  <li>Potential fields method — for movement control</li>
+			  </ul>
+			  
+			  <p>
+			  The fourth component — group behavior modeling:
+			  </p>
+			  
+			  <ul>
+				  <li>Swarm rules (Boids) — cohesion, alignment, separation [16]</li>
+				  <li>Game theory — for modeling cooperation and competition</li>
+			  </ul>
+			  
+			  <p>
+			  The fifth component — artificial intelligence integration:
+			  </p>
+			  
+			  <ul>
+				  <li>Finite state machines (FSM) — for agent state management</li>
+				  <li>Decision trees — for hierarchical action selection</li>
+				  <li>Reinforcement learning (RL) — for adaptive behavior [17]</li>
+			  </ul>
+			  
+			  <a name=p3></a>
+			  <h2>3. Practical Modeling</h2>
+			  
+			  <a name=p31></a>
+			  <h3>3.1 Description of the Experimental Environment</h3>
+			  
+			  <p>
+			  The experimental environment simulates building evacuation in Unity3D. Agent parameters include:
+			  </p>
+			  
+			  <ul>
+				  <li>Movement speed: 1-3 m/s</li>
+				  <li>Personal space radius: 0.3-0.4 m</li>
+				  <li>Panic level and tendency to follow a leader</li>
+			  </ul>
+			  
+			  <div class=img>
+				  <img src="images/7.png" width=500 height=263 alt="Visualization of agent field of view">
+				  <p class=imgcaption>Figure 7 — Visualization of agent field of view</p>
+			  </div>
+			  
+			  <p>
+			  Experiment scenarios:
+			  </p>
+			  
+			  <ol>
+				  <li>basic scenario: evacuation without external threats</li>
+				  <li>dynamic obstacles: partial building collapse</li>
+				  <li>introducing panic: spreading false information through agents</li>
+				  <li>presence of coordinators (managed evacuation)</li>
+			  </ol>
+			  
+			  <p>
+			  Analysis metrics:
+			  </p>
+			  
+			  <ul>
+				  <li>evacuation time depending on the number of agents</li>
+				  <li>percentage of agents successfully exiting the building</li>
+				  <li>crowd density at key points (doorways)</li>
+			  </ul>
+			  
+			  <p>
+			  Visualization and data collection:
+			  </p>
+			  
+			  <ul>
+				  <li>observation mode: free camera, density heat maps</li>
+				  <li>data export: agent position logs in CSV format for analysis in Python (Matplotlib, Pandas)</li>
+			  </ul>
+			  
+			  <a name=p32></a>
+			  <h3>3.2 Conducting the Initial Simulation</h3>
+			  
+			  <p>
+			  In the basic scenario, 100 agents evacuated from the building through two exits in ~30 seconds. Congestion was observed only at doorways,
+        but did not lead to a complete stop of the flow.
+			  </p>
+			  
+			  <p>
+			  Figures 8-10 show screenshots of various situations during the simulation. Figure 8 shows bidirectional movement of agents in a corridor,
+        Figure 9 shows congestion at a doorway, and Figure 10 shows the evacuation process.
+			  </p>
+			  
+			  <div class=img>
+				  <img src="images/8.png" width=500 height=375 alt="Bidirectional movement">
+				  <p class=imgcaption>Figure 8 — Bidirectional movement</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/9.png" width=500 height=375 alt="Congestion">
+				  <p class=imgcaption>Figure 9 — Congestion</p>
+			  </div>
+			  
+			  <div class=img>
+				  <img src="images/10.png" width=500 height=375 alt="Evacuation">
+				  <p class=imgcaption>Figure 10 — Evacuation</p>
+			  </div>
+			  
+			  <p>
+			  In conclusion, the basic scenario confirmed the model's functionality — in simple conditions, agents evacuate efficiently, and the calculated
+        time matches estimates based on speed and distance.
+			  </p>
+			  
+			  <a name=p4></a>
+			  <h2>Conclusion</h2>
+			  
+			  <p>
+			  During the work, a mathematical model for simulating agent behavior in a three-dimensional environment was developed and a program for
+        conducting evacuation experiments was implemented. The model takes into account physical constraints, agent interactions, and artificial
+        intelligence elements.
+			  </p>
+			  
+			  <p>
+			  The obtained results can be used to solve problems of evacuation planning, traffic flow optimization, and crowd modeling in public spaces.
+        Further research may be directed toward integrating deep reinforcement learning methods to increase agent autonomy.
+			  </p>
+			  
+			  <a name=ref></a>
+			  <h2>List of References</h2>
+			  <ol>
+				  <li><a name="ref1"></a>Russell, S. J. Artificial intelligence: a modern approach. Fourth Edition / S. J. Russell, P. Norvig. — Hoboken : Pearson Education, Inc., 2021. — 1168 p. — ISBN: 978-1-292-40117-1.</li>
+				  <li><a name="ref2"></a>Salamon, T. Design of Agent-Based Models / T. Salamon — Repin : Bruckner Publishing, 2011. — 220 p. — ISBN: 978-80-904661-1-1.</li>
+				  <li><a name="ref3"></a>Balaji, P. G. An Introduction to Multi-Agent Systems / P. G. Balaji, D. Srinivasan // ResearchGate : [website]. — 2010. — URL: https://www.researchgate.net/publication/226165258_An_Introduction_to_Multi-Agent_Systems (accessed: 20.01.2025).</li>
+				  <li><a name="ref4"></a>Parker, L. E. Heterogeneous multi-robot cooperation : Department of Electrical Engineering and Computer Science : PhD Thesis / Parker Lynne E. ; Massachusetts Institute of Technology. — Cambridge, 1994. — 245 p.</li>
+				  <li><a name="ref5"></a>Drezewski, R. Co-evolutionary multi-agent system with predator-prey mechanism for multi-objective optimization / R. Drezewski, L. Siwik // Adaptive and Natural Computing Algorithms : 8th International Conference, ICANNGA 2007, LNCS. — Warsaw, 2007. — pp. 67-76.</li>
+				  <li><a name="ref6"></a>Damba, A. Hierarchical control in a multiagent system / A. Damba, S. Watanabe // International Journal of innovative computing, Information & Control. — 2008. — vol. 4, no. 2. — pp. 91-100.</li>
+				  <li><a name="ref7"></a>Van de Vijsel, M. Coalition formation in multi-agent systems under real-world conditions / M. van de Vijsel, J. Anderson // AAAI Workshop — Technical Report — 2004. — WS-04-06. — pp. 54-60.</li>
+				  <li><a name="ref8"></a>Horling, B. A survey of multi-agent organizational paradigms / B. Horling, V. Lesser // Knowledge Engineering Review — 2004. — vol. 19, no. 4. — pp. 281-316.</li>
+				  <li><a name="ref9"></a>Agogino, A. K. Team formation in partially observable multi-agent systems / A. K. Agogino, K. Tumer // NASA Ames Research Center, NTIS. — 2004.</li>
+				  <li><a name="ref10"></a>Jonathan, L. Virtual Reality in Unity / L. Jonathan ; translated from English by R. N. Ragimov. — Moscow : DMK Press, 2016. — 316 p. — Electronic text // Lan : electronic library system. — URL: https://e.lanbook.com/book/93271 (accessed: 08.05.2025) — ISBN 978-5-97060-234-8.</li>
+				  <li><a name="ref11"></a>Maksimenkova, O. Programming in Unreal Engine 5 for Beginner Game Developers. Basics of the Blueprint Visual Language / O. Maksimenkova, N. Veselko — Moscow : Eksmo, 2024. — 320 p. — ISBN 978-5-04-164196-2.</li>
+				  <li><a name="ref12"></a>Boev, V. D. Modeling in AnyLogic Environment : textbook for universities / V. D. Boev. — Moscow : Yurait Publishing House, 2025. — 298 p. — (Higher Education). — Electronic text // Yurait Educational Platform [website]. — URL: https://urait.ru/bcode/562671 (accessed: 06.04.2025) — ISBN 978-5-534-02560-6.</li>
+				  <li><a name="ref13"></a>Helbing, D. Social Force Model for Pedestrian Dynamics / D. Helbing, P. Molnar // arXiv : [website]. — 1998. — URL: https://arxiv.org/abs/cond-mat/9805244 (accessed: 05.04.2025).</li>
+				  <li><a name="ref14"></a>Gammell, J. D. Informed RRT*: Optimal Sampling-based Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic / J. D. Gammell, S. S. Srinivasa, T. D. Barfoot // arXiv : [website]. — 2014. — URL: https://arxiv.org/abs/1404.2334 (accessed: 05.04.2025).</li>
+				  <li><a name="ref15"></a>Nguyen, Q. C. Monte Carlo Analysis of Boid Simulations with Obstacles: A Physics-Based Perspective / Q. C. Nguyen // arXiv : [website]. — 2024. — URL: https://arxiv.org/abs/2412.10420 (accessed: 16.04.2025).</li>
+				  <li><a name="ref16"></a>Baker, B. Emergent Tool Use From Multi-Agent Autocurricula / B. Baker, I. Kanitscheider, T. Markov, Y. Wu // arXiv : [website]. — 2019. — URL: https://arxiv.org/abs/1909.07528 (accessed: 02.05.2025).</li>
+				  <li><a name="ref17"></a>Sutton, R. S. Reinforcement Learning: An Introduction / R. S. Sutton, A. G. Barto. — MIT Press, 2018.</li>
+			  </ol>
+		  
+		  </div> <!-- maintext -->
+	  
+	  </div> <!-- middleblock -->
+
+	  <div id="menub">
+		  <a class="mitemb" href="../indexe.html">Resume</a>
+	  </div>
+  </div> <!-- content-container -->
+
+  <script>
+    // JavaScript for managing the sliding menu
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const sideMenu = document.getElementById('side-menu');
+      const menuClose = document.getElementById('menu-close');
+      const overlay = document.getElementById('overlay');
+      const body = document.body;
+      
+      function openMenu() {
+        body.classList.add('menu-active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeMenu() {
+        body.classList.remove('menu-active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      menuToggle.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+    });
+  </script>
+
+</body>
+</html>
