@@ -31,7 +31,7 @@
         <!-- Заголовок -->
         <header class="theory-header">
             <h1 class="theory-title">Вопросы и задания</h1>
-            <p class="theory-subtitle">Раздел 1: Введение в Go</p>
+            <p class="theory-subtitle">Раздел X: Название раздела</p>
         </header>
 
         <main class="theory-content">
@@ -44,7 +44,16 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">1</span>
-                            <h3 class="question-text">Какие особенности языка Go повлияли на его популярность?</h3>
+                            <h3 class="question-text">Что такое горутина и чем она отличается от обычного потока?</h3>
+                        </div>
+                        <div class="question-answer">
+                            <p><strong>Ответ:</strong> Горутина — это легковесный поток управления в Go, который планируется runtime'ом Go. В отличие от системных потоков, горутины:</p>
+                            <ul class="content-list">
+                                <li>Имеют меньший размер стека (начинается с 2KB)</li>
+                                <li>Быстрее создаются и уничтожаются</li>
+                                <li>Планируются runtime'ом Go, а не ОС</li>
+                                <li>Используют M:N планирование (много горутин на немного потоков ОС)</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -52,7 +61,16 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">2</span>
-                            <h3 class="question-text">Что такое Go toolchain и какие команды она включает?</h3>
+                            <h3 class="question-text">Как работает механизм каналов (channels) в Go?</h3>
+                        </div>
+                        <div class="question-answer">
+                            <p><strong>Ответ:</strong> Каналы — это типизированные конвейеры для связи между горутинами. Они могут быть буферизированными и небуферизированными:</p>
+                            <pre><code class="language-go">// Небуферизированный канал
+ch := make(chan int)
+
+// Буферизированный канал
+chBuffered := make(chan int, 10)</code></pre>
+                            <p>Операции отправки и получения блокируются до тех пор, пока другая сторона не будет готова.</p>
                         </div>
                     </div>
 
@@ -60,14 +78,24 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">3</span>
-                            <h3 class="question-text">Как устанавливается язык Go и как настроить переменные окружения?</h3>
+                            <h3 class="question-text">Что такое interface{} и когда его следует использовать?</h3>
+                        </div>
+                        <div class="question-answer">
+                            <p><strong>Ответ:</strong> interface{} — это пустой интерфейс, который реализуется любым типом. Его следует использовать:</p>
+                            <ul class="content-list">
+                                <li>Для создания generic-функций (до появления дженериков)</li>
+                                <li>При работе с данными неизвестного типа</li>
+                                <li>В коде, который должен принимать различные типы данных</li>
+                            </ul>
+                            <p>Однако с появлением дженериков в Go 1.18 рекомендуется использовать их вместо interface{}.</p>
+                        </div>
                     </div>
 
                     <!-- Вопрос 4 -->
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">4</span>
-                            <h3 class="question-text">Что такое рабочая область (workspace) в Go?</h3>
+                            <h3 class="question-text">Как работает defer в Go и каков порядок выполнения deferred функций?</h3>
                         </div>
                     </div>
 
@@ -75,15 +103,32 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">5</span>
-                            <h3 class="question-text">Чем отличается компиляция от интерпретации и к какому типу относится Go?</h3>
+                            <h3 class="question-text">В чем разница между срезом (slice) и массивом (array) в Go?</h3>
                         </div>
-                    </div>
-
-                    <!-- Вопрос 6 -->
-                    <div class="question-item">
-                        <div class="question-header">
-                            <span class="question-number">6</span>
-                            <h3 class="question-text">Какие преимущества даёт статическая типизация?</h3>
+                        <div class="question-answer">
+                            <p><strong>Ответ:</strong> Основные различия:</p>
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Массив</th>
+                                        <th>Срез</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Фиксированный размер</td>
+                                        <td>Динамический размер</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Передается по значению</td>
+                                        <td>Передается по ссылке</td>
+                                    </tr>
+                                    <tr>
+                                        <td>[3]int{1,2,3}</td>
+                                        <td>[]int{1,2,3}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
