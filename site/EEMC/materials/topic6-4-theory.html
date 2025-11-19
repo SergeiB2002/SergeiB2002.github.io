@@ -75,7 +75,7 @@
                     <p>Рассмотрим пример использования оператора <code>select</code> с двумя горутинами:</p>
 
                     <div class="code-example">
-                        <h4>Пример 2.1 - Использование select с двумя каналами</h4>
+                        <h4>Пример - Использование select с двумя каналами</h4>
                         <pre><code class="language-go">package main 
 import "fmt"
  
@@ -131,7 +131,7 @@ func main(){
                     <p>Если в операторе <code>select</code> нет операторов <code>case</code>, которые могут выполнить операцию, то это приведет к взаимоблокировке. Чтобы избежать блокировки, конструкция <code>select</code> может иметь оператор <code>default</code> для обработки операций, которые не охвачены блоками <code>case</code>:</p>
 
                     <div class="code-example">
-                        <h4>Пример 3.1 - Использование default</h4>
+                        <h4>Пример - Использование default</h4>
                         <pre><code class="language-go">package main 
  
 import (
@@ -201,7 +201,7 @@ func main(){
                     <p>Как мы увидели, одномоментно выполняется только один блок <code>case</code> за раз. Мы можем выполнить несколько случаев, повторно проверяя, готов ли случай к выполнению:</p>
 
                     <div class="code-example">
-                        <h4>Пример 4.1 - Обработка всех операций в цикле</h4>
+                        <h4>Пример - Обработка всех операций в цикле</h4>
                         <pre><code class="language-go">package main 
 import "fmt"
  

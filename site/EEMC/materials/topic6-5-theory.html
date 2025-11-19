@@ -50,7 +50,7 @@
                     <p>Рассмотрим ситуацию, когда несколько горутин работают с общим ресурсом без синхронизации:</p>
 
                     <div class="code-example">
-                        <h4>Пример 1.1 - Гонка данных без синхронизации</h4>
+                        <h4>Пример - Гонка данных без синхронизации</h4>
                         <pre><code class="language-go">package main
 import (
     "fmt"
@@ -129,7 +129,7 @@ The End</code></pre>
                     <p>На уровне кода мьютекс представляет тип <code>sync.Mutex</code>, который определен в пакете <code>sync</code>. Для блокирования доступа к общему разделяемому ресурсу у мьютекса вызывается метод <code>Lock()</code>, а для разблокировки доступа - метод <code>Unlock()</code>.</p>
 
                     <div class="code-example">
-                        <h4>Пример 2.1 - Использование Mutex для синхронизации</h4>
+                        <h4>Пример - Использование Mutex для синхронизации</h4>
                         <pre><code class="language-go">package main
 import (
     "fmt"
@@ -227,7 +227,7 @@ The End</code></pre>
                     </div>
 
                     <div class="code-example">
-                        <h4>Пример 3.1 - Использование RWMutex</h4>
+                        <h4>Пример - Использование RWMutex</h4>
                         <pre><code class="language-go">package main
  
 import (
