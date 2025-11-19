@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вопросы и задания - Раздел 1 | Программирование на Go</title>
+    <title>Вопросы и задания - Раздел 5 | Программирование на Go</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/code-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
@@ -28,13 +28,13 @@
         <div class="breadcrumbs">
             <a href="../index.html">Главная</a>
             <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-current">Вопросы и задания к разделу 1</span>
+            <span class="breadcrumb-current">Вопросы и задания к разделу 5</span>
         </div>
 
         <!-- Заголовок -->
         <header class="theory-header">
             <h1 class="theory-title">Вопросы и задания</h1>
-            <p class="theory-subtitle">Раздел 1: Введение в Go</p>
+            <p class="theory-subtitle">Раздел 5: Производные типы данных</p>
         </header>
 
         <main class="theory-content">
@@ -47,7 +47,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">1</span>
-                            <h3 class="question-text">Какие особенности языка Go повлияли на его популярность?</h3>
+                            <h3 class="question-text">Что такое псевдоним типа?</h3>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">2</span>
-                            <h3 class="question-text">Что такое Go toolchain и какие команды она включает?</h3>
+                            <h3 class="question-text">Как объявляется структура?</h3>
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">3</span>
-                            <h3 class="question-text">Как устанавливается язык Go и как настроить переменные окружения?</h3>
+                            <h3 class="question-text">Что такое методы структур?</h3>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">4</span>
-                            <h3 class="question-text">Что такое рабочая область (workspace) в Go?</h3>
+                            <h3 class="question-text">Чем срез отличается от массива?</h3>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">5</span>
-                            <h3 class="question-text">Чем отличается компиляция от интерпретации и к какому типу относится Go?</h3>
+                            <h3 class="question-text">Как создаётся карта (map) и какие операции она поддерживает?</h3>
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">6</span>
-                            <h3 class="question-text">Какие преимущества даёт статическая типизация?</h3>
+                            <h3 class="question-text">Как работают методы с указателями на структуру?</h3>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                             <span class="exercise-number">Упражнение 1</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Установить Go и настроить переменные окружения (GOROOT, GOPATH)</p>
+                            <p>Создать структуру Person и метод PrintInfo()</p>
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                             <span class="exercise-number">Упражнение 2</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Создать первую программу «Hello, Go!» и скомпилировать её</p>
+                            <p>Реализовать динамическое добавление элементов в сре</p>
                         </div>
                     </div>
 
@@ -124,7 +124,7 @@
                             <span class="exercise-number">Упражнение 3</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Написать программу, которая выводит информацию о версии Go и системной среде</p>
+                            <p>Создать карту «страна → столица» и выполнить операции поиска и удаления</p>
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
                             <span class="exercise-number">Упражнение 4</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Создать модуль Go (go mod init) и собрать проект с использованием go build</p>
+                            <p>Написать метод структуры, изменяющий одно из полей</p>
                         </div>
                     </div>
                 </div>
@@ -145,11 +145,11 @@
 
             <!-- Пример решения -->
             <section id="example" class="content-section">
-                <h2 class="section-heading">🎯 Пример решения упражнения 2</h2>
+                <h2 class="section-heading">🎯 Пример решения упражнения 1</h2>
                 
                 <div class="solution-container">
                     <div class="solution-description">
-                        <p>Ниже представлено решение упражнения 2</p>
+                        <p>Ниже представлено решение упражнения 1</p>
                     </div>
 
                     <div class="code-example">
@@ -158,26 +158,29 @@
 
 import "fmt"
 
-func main() {
-    fmt.Println("Hello, Go!")
-}</code></pre>
-                    </div>
+type Person struct {
+    Name string
+    Age  int
+}
 
-                    <div class="code-example">
-                        <h4>Команда компиляции</h4>
-                        <pre><code class="language-go">go build
+func (p Person) PrintInfo() {
+    fmt.Println("Name:", p.Name, "Age:", p.Age)
+}
+
+func main() {
+    p := Person{"Alex", 21}
+    p.PrintInfo()
+}
 </code></pre>
                     </div>
-
-
             </section>
         </main>
 
         <!-- Навигация -->
         <div class="theory-navigation">
-            <a href="topic1-2-theory.html" class="nav-button prev">← К материалам раздела 1</a>
+            <a href="topic5-1-theory.html" class="nav-button prev">← К материалам раздела 5</a>
             <a href="../index.html" class="nav-button home">На главную</a>
-            <a href="topic2-1-theory.html" class="nav-button next">К материалам раздела 2 →</a>
+            <a href="topic6-1-theory.html" class="nav-button next">К материалам раздела 6 →</a>
         </div>
 
         <footer class="theory-footer">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вопросы и задания - Раздел 1 | Программирование на Go</title>
+    <title>Вопросы и задания - Раздел 4 | Программирование на Go</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/code-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
@@ -28,13 +28,13 @@
         <div class="breadcrumbs">
             <a href="../index.html">Главная</a>
             <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-current">Вопросы и задания к разделу 1</span>
+            <span class="breadcrumb-current">Вопросы и задания к разделу 4</span>
         </div>
 
         <!-- Заголовок -->
         <header class="theory-header">
             <h1 class="theory-title">Вопросы и задания</h1>
-            <p class="theory-subtitle">Раздел 1: Введение в Go</p>
+            <p class="theory-subtitle">Раздел 4: Указатели</p>
         </header>
 
         <main class="theory-content">
@@ -47,7 +47,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">1</span>
-                            <h3 class="question-text">Какие особенности языка Go повлияли на его популярность?</h3>
+                            <h3 class="question-text">Что такое указатель в Go?</h3>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">2</span>
-                            <h3 class="question-text">Что такое Go toolchain и какие команды она включает?</h3>
+                            <h3 class="question-text">Как объявить указатель на переменную?</h3>
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">3</span>
-                            <h3 class="question-text">Как устанавливается язык Go и как настроить переменные окружения?</h3>
+                            <h3 class="question-text">Как работает оператор & и *?</h3>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">4</span>
-                            <h3 class="question-text">Что такое рабочая область (workspace) в Go?</h3>
+                            <h3 class="question-text">Зачем использовать указатели при передаче аргументов?</h3>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">5</span>
-                            <h3 class="question-text">Чем отличается компиляция от интерпретации и к какому типу относится Go?</h3>
+                            <h3 class="question-text">Можно ли возвращать указатель из функции?</h3>
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@
                     <div class="question-item">
                         <div class="question-header">
                             <span class="question-number">6</span>
-                            <h3 class="question-text">Какие преимущества даёт статическая типизация?</h3>
+                            <h3 class="question-text">Что происходит при передаче структуры по указателю?</h3>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                             <span class="exercise-number">Упражнение 1</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Установить Go и настроить переменные окружения (GOROOT, GOPATH)</p>
+                            <p>Создать переменную и вывести её адрес и значение через указатель</p>
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                             <span class="exercise-number">Упражнение 2</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Создать первую программу «Hello, Go!» и скомпилировать её</p>
+                            <p>Написать функцию, увеличивающую значение переменной через указатель</p>
                         </div>
                     </div>
 
@@ -124,7 +124,7 @@
                             <span class="exercise-number">Упражнение 3</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Написать программу, которая выводит информацию о версии Go и системной среде</p>
+                            <p>Реализовать обмен значений двух переменных (swap) через указатели</p>
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
                             <span class="exercise-number">Упражнение 4</span>
                         </div>
                         <div class="exercise-description">
-                            <p>Создать модуль Go (go mod init) и собрать проект с использованием go build</p>
+                            <p>Создать структуру и изменить одно поле через указатель</p>
                         </div>
                     </div>
                 </div>
@@ -145,11 +145,11 @@
 
             <!-- Пример решения -->
             <section id="example" class="content-section">
-                <h2 class="section-heading">🎯 Пример решения упражнения 2</h2>
+                <h2 class="section-heading">🎯 Пример решения упражнения 3</h2>
                 
                 <div class="solution-container">
                     <div class="solution-description">
-                        <p>Ниже представлено решение упражнения 2</p>
+                        <p>Ниже представлено решение упражнения 3</p>
                     </div>
 
                     <div class="code-example">
@@ -158,26 +158,25 @@
 
 import "fmt"
 
-func main() {
-    fmt.Println("Hello, Go!")
-}</code></pre>
-                    </div>
+func swap(a, b *int) {
+    *a, *b = *b, *a
+}
 
-                    <div class="code-example">
-                        <h4>Команда компиляции</h4>
-                        <pre><code class="language-go">go build
+func main() {
+    x, y := 5, 10
+    swap(&x, &y)
+    fmt.Println(x, y) 
+}
 </code></pre>
                     </div>
-
-
             </section>
         </main>
 
         <!-- Навигация -->
         <div class="theory-navigation">
-            <a href="topic1-2-theory.html" class="nav-button prev">← К материалам раздела 1</a>
+            <a href="topic4-1-theory.html" class="nav-button prev">← К материалам раздела 4</a>
             <a href="../index.html" class="nav-button home">На главную</a>
-            <a href="topic2-1-theory.html" class="nav-button next">К материалам раздела 2 →</a>
+            <a href="topic5-1-theory.html" class="nav-button next">К материалам раздела 5 →</a>
         </div>
 
         <footer class="theory-footer">
