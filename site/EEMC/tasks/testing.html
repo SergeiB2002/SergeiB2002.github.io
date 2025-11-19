@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование | Программирование на Go</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/code-styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">← На главную</a>
+            <div class="nav-links">
+                <a href="#test" class="nav-link">Тест</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <a href="../index.html">Главная</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Тестирование по всем разделам</span>
+    </div>
+
+    <!-- Заголовок -->
+    <header class="theory-header">
+        <h1 class="theory-title">Тест по программированию на Go</h1>
+        <p class="theory-subtitle">Ответьте на все вопросы, затем нажмите кнопку «Проверить результат».</p>
+    </header>
+
+    <main class="theory-content" id="test">
+        <section class="content-section">
+            <h2 class="section-heading">🧪 Тестирование знаний</h2>
+
+            <div class="info-box">
+                <strong>📌 Инструкция:</strong> выберите один вариант ответа для каждого вопроса. После проверки теста
+                вы увидите количество правильных ответов и процент. Вопросы будут подсвечены зелёным (верно)
+                или красным (ошибка).
+            </div>
+
+            <div class="questions-container">
+
+                <!-- Вопрос 1 -->
+                <div class="question-item" id="question-1">
+                    <div class="question-header">
+                        <div class="question-number">1</div>
+                        <p class="question-text">
+                            Какой тип является нулевым значением для строки (string) в Go?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">" "</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">""</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">nil</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">"0"</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 2 -->
+                <div class="question-item" id="question-2">
+                    <div class="question-header">
+                        <div class="question-number">2</div>
+                        <p class="question-text">
+                            Какой оператор используется для объявления новой переменной с автоматическим определением типа?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">:=</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">=</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">var:</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">auto</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 3 -->
+                <div class="question-item" id="question-3">
+                    <div class="question-header">
+                        <div class="question-number">3</div>
+                        <p class="question-text">
+                            Что делает функция <code>make()</code> при создании среза?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Создаёт новый массив и возвращает копию</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Создаёт срез, но не выделяет память</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Инициализирует срез и выделяет память под массив</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Инициализирует срез, но без длины</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 4 -->
+                <div class="question-item" id="question-4">
+                    <div class="question-header">
+                        <div class="question-number">4</div>
+                        <p class="question-text">
+                            Какой результат выполнения кода?<br>
+                            <code>fmt.Println(5 / 2)</code>
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q4" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">2</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q4" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">2.5</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q4" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">3</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q4" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Ошибка компиляции</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 5 -->
+                <div class="question-item" id="question-5">
+                    <div class="question-header">
+                        <div class="question-number">5</div>
+                        <p class="question-text">
+                            Что делает оператор <code>&amp;</code>?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q5" value="A">
+                                        <span class="option-letter">A.</span>
+                                        <span class="option-text">Разыменовывает указатель</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q5" value="B">
+                                        <span class="option-letter">B.</span>
+                                        <span class="option-text">Возвращает адрес переменной</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q5" value="C">
+                                        <span class="option-letter">C.</span>
+                                        <span class="option-text">Создаёт копию указателя</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q5" value="D">
+                                        <span class="option-letter">D.</span>
+                                        <span class="option-text">Освобождает память</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 6 -->
+                <div class="question-item" id="question-6">
+                    <div class="question-header">
+                        <div class="question-number">6</div>
+                        <p class="question-text">
+                            Какой тип канала создаёт выражение <code>ch := make(chan int, 5)</code>?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q6" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Двунаправленный небуферизированный</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q6" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Однонаправленный буферизированный</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q6" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Двунаправленный буферизированный</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q6" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Однонаправленный небуферизированный</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 7 -->
+                <div class="question-item" id="question-7">
+                    <div class="question-header">
+                        <div class="question-number">7</div>
+                        <p class="question-text">
+                            Сколько значений может возвращать функция в Go?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q7" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Только одно</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q7" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Не более двух</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q7" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Неограниченное количество</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q7" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Только три</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 8 -->
+                <div class="question-item" id="question-8">
+                    <div class="question-header">
+                        <div class="question-number">8</div>
+                        <p class="question-text">
+                            Что будет в результате выполнения?<br>
+                            <code>var a []int<br>fmt.Println(a == nil)</code>
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q8" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">true</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q8" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">false</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q8" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Ошибка компиляции</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q8" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">nil</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 9 -->
+                <div class="question-item" id="question-9">
+                    <div class="question-header">
+                        <div class="question-number">9</div>
+                        <p class="question-text">
+                            Каким образом передаются параметры в функции?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q9" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Только по значению</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q9" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Только по ссылке</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q9" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Только по указателю</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q9" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">По ссылке и по значению в зависимости от типа</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 10 -->
+                <div class="question-item" id="question-10">
+                    <div class="question-header">
+                        <div class="question-number">10</div>
+                        <p class="question-text">
+                            Что выведет программа?<br>
+                            <code>m := map[string]int{}<br>fmt.Println(m["x"])</code>
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q10" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Ошибка</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q10" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">nil</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q10" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">-1</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q10" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">0</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 11 -->
+                <div class="question-item" id="question-11">
+                    <div class="question-header">
+                        <div class="question-number">11</div>
+                        <p class="question-text">
+                            Какой синтаксис запускает горутину?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q11" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">run func()</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q11" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">async func()</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q11" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">go func()</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q11" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">goroutine func()</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 12 -->
+                <div class="question-item" id="question-12">
+                    <div class="question-header">
+                        <div class="question-number">12</div>
+                        <p class="question-text">
+                            Какое ключевое слово используется для создания пользовательского типа?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q12" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">alias</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q12" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">type</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q12" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">struct</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q12" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">define</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 13 -->
+                <div class="question-item" id="question-13">
+                    <div class="question-header">
+                        <div class="question-number">13</div>
+                        <p class="question-text">
+                            Что произойдёт при записи в закрытый канал?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q13" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Запись будет проигнорирована</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q13" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Горутина завершится корректно</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q13" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Паника (panic)</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q13" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Канал откроется автоматически</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 14 -->
+                <div class="question-item" id="question-14">
+                    <div class="question-header">
+                        <div class="question-number">14</div>
+                        <p class="question-text">
+                            Что делает метод <code>wg.Wait()</code>?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q14" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Запускает новые горутины</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q14" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Ждёт завершения всех горутин, добавленных через Add()</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q14" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Закрывает все каналы</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q14" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Прерывает выполнение программы</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 15 -->
+                <div class="question-item" id="question-15">
+                    <div class="question-header">
+                        <div class="question-number">15</div>
+                        <p class="question-text">
+                            Что выведет код?<br>
+                            <code>x := 10<br>p := &amp;x<br>*p = 20<br>fmt.Println(x)</code>
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q15" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">20</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q15" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">10</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q15" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Ошибка</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q15" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">nil</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 16 -->
+                <div class="question-item" id="question-16">
+                    <div class="question-header">
+                        <div class="question-number">16</div>
+                        <p class="question-text">
+                            Какой метод используется для добавления элемента в срез?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q16" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">add(slice, value)</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q16" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">slice.push(value)</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q16" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">append(slice, value)</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q16" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">slice.insert(value)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 17 -->
+                <div class="question-item" id="question-17">
+                    <div class="question-header">
+                        <div class="question-number">17</div>
+                        <p class="question-text">
+                            Что делает оператор <code>select</code>?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q17" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Выбирает случайный канал</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q17" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Позволяет читать/писать в несколько каналов одновременно</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q17" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Сортирует каналы по приоритету</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q17" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Синхронизирует горутины</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 18 -->
+                <div class="question-item" id="question-18">
+                    <div class="question-header">
+                        <div class="question-number">18</div>
+                        <p class="question-text">
+                            Какое нулевое значение у карты <code>map[string]int</code>?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q18" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">0</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q18" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">nil</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q18" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">{}</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q18" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">[]</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 19 -->
+                <div class="question-item" id="question-19">
+                    <div class="question-header">
+                        <div class="question-number">19</div>
+                        <p class="question-text">
+                            Какая особенность анонимных функций?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q19" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Они не могут возвращать значения</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q19" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Они не могут использовать внешние переменные</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q19" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Определяются без имени и могут быть немедленно вызваны</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q19" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Должны определяться только внутри функций</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Вопрос 20 -->
+                <div class="question-item" id="question-20">
+                    <div class="question-header">
+                        <div class="question-number">20</div>
+                        <p class="question-text">
+                            Что верно о методах структур?
+                        </p>
+                    </div>
+                    <div class="question-answer">
+                        <ul class="options-list">
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q20" value="A">
+                                    <span class="option-letter">A.</span>
+                                    <span class="option-text">Метод всегда должен иметь указатель-получатель</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q20" value="B">
+                                    <span class="option-letter">B.</span>
+                                    <span class="option-text">Метод может иметь либо значение-получатель, либо указатель-получатель</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q20" value="C">
+                                    <span class="option-letter">C.</span>
+                                    <span class="option-text">Метод должен описываться внутри структуры</span>
+                                </label>
+                            </li>
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" name="q20" value="D">
+                                    <span class="option-letter">D.</span>
+                                    <span class="option-text">Методы нельзя вызывать через переменные структур</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Кнопка проверки и результат -->
+            <div class="test-controls">
+                <button class="check-button" id="check-test">Проверить результат</button>
+
+                <div class="result-box" id="test-result">
+                    <strong>Результат теста:</strong>
+                    <div class="result-details" id="result-text"></div>
+
+                    <div class="legend-box">
+                        <span class="legend-mark">
+                            <span class="legend-color correct"></span>
+                            — вопрос с правильным ответом
+                        </span>
+                        <span class="legend-mark">
+                            <span class="legend-color incorrect"></span>
+                            — вопрос с неправильным ответом или без ответа
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Навигация -->
+    <div class="theory-navigation">
+        <a href="prac-tasks.html" class="nav-button home">← Практические задания</a>
+        <a href="../index.html" class="nav-button">На главную</a>
+    </div>
+
+    <footer class="theory-footer">
+        <p>&copy; 2025 ЭУМК "Программирование на Go". Тестирование.</p>
+    </footer>
+</div>
+
+<script src="../js/test.js"></script>
+</body>
+</html>

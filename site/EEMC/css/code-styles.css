@@ -1112,3 +1112,193 @@
         padding: 8px 12px;
     }
 }
+
+/* Дополнительные стили для теста (можно перенести в code-styles.css) */
+
+        .questions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .question-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 0;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .question-item:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transform: translateY(-1px);
+        }
+
+        .question-header {
+            background: #edf2f7;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .question-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .question-text {
+            color: #2d3748;
+            font-size: 1.05rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .question-answer {
+            padding: 20px;
+            background: white;
+        }
+
+        .options-list {
+            list-style: none;
+            margin: 10px 0 0;
+            padding-left: 0;
+        }
+
+        .option-item {
+            margin-bottom: 8px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+            padding: 8px 10px;
+            border-radius: 8px;
+            transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+        }
+
+        .option-label:hover {
+            background: #edf2f7;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transform: translateY(-1px);
+        }
+
+        .option-label input {
+            margin-top: 3px;
+        }
+
+        .option-letter {
+            font-weight: 600;
+            color: #4a5568;
+            min-width: 22px;
+        }
+
+        .option-text {
+            color: #2d3748;
+        }
+
+        .question-item.correct .question-header {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+        }
+
+        .question-item.incorrect .question-header {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+        }
+
+        .question-item.correct .question-number {
+            background: #48bb78;
+        }
+
+        .question-item.incorrect .question-number {
+            background: #f56565;
+        }
+
+        .test-controls {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .check-button {
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .check-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .check-button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 18px 20px;
+            border-radius: 10px;
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            color: #2b6cb0;
+            display: none;
+            text-align: left;
+        }
+
+        .result-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .result-details {
+            font-size: 0.95rem;
+        }
+
+        .legend-box {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-align: left;
+        }
+
+        .legend-mark {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            gap: 6px;
+        }
+
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+
+        .legend-color.correct {
+            background: #48bb78;
+        }
+
+        .legend-color.incorrect {
+            background: #f56565;
+        }
