@@ -612,3 +612,57 @@ table.search td.cn a:hover {
     width: 70%;
   }
 }
+
+/* ------------- БЛОК ПРЕДУПРЕЖДЕНИЯ ------------------------------------------------------------------------ */
+
+.warning-block {
+  background: rgba(33, 150, 243, 0.2); /* Голубой фон с прозрачностью */
+  border-left: 5px solid #1565c0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 15px 30px 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', sans-serif;
+  color: #424242;
+  transition: all 0.3s ease;
+}
+
+.warning-block:hover {
+  background: rgba(33, 150, 243, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.warning-block h3 {
+  color: #0d47a1;
+  margin: 0 0 15px 0;
+  padding: 0;
+  text-indent: 0;
+  font-size: 18px;
+  border-bottom: 2px solid rgba(21, 101, 192, 0.3);
+  padding-bottom: 8px;
+}
+
+.warning-block p {
+  text-indent: 0;
+  margin: 0 0 15px 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #424242;
+}
+
+.warning-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Адаптивность для блока предупреждения */
+@media (max-width: 768px) {
+  .warning-block {
+    margin: 15px 10px 25px 10px;
+    padding: 15px;
+  }
+  
+  .warning-block h3 {
+    font-size: 16px;
+  }
+}
